@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block title %}유튜버 단가 분석 결과 | Marketing ROI Dashboard{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div>
+        <div class="page-kicker">Pricing Result</div>
+        <h1 class="page-title">{{ analysis.channel_name }}</h1>
+        <p class="page-subtitle">
+            {% if analysis.campaign %}
+                {{ analysis.campaign.name }} 캠페인 기준 단가 사전 분석 결과
+            {% else %}
+                유튜버 채널 단가 사전 분석 결과
+            {% endif %}
+        </p>
+    </div>
+    <a class="btn btn-outline-secondary" href="{% url 'marketing:youtube_channel_analyze' %}">새 분석</a>
+</div>
+
+<div class="dashboard-card mb-4">
+    <h2 class="section-title">채널 기본 정보</h2>
+    <div class="row g-3">
+        <div class="col-md-4">
+            <div class="text-muted small">연결 캠페인</div>
+            <div class="fw-semibold">
+                {% if analysis.campaign %}
+                    <a href="{% url 'marketing:campaign_detail' analysis.campaign.pk %}">{{ analysis.campaign.name }}</a>
+                {% else %}
+                    -
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-4"><div class="text-muted small">채널명</div><div class="fw-semibold">{{ analysis.channel_name }}</div></div>
+        <div class="col-md-4"><div class="text-muted small">구독자 수</div><div class="fw-semibold">{{ analysis.subscriber_count|intcomma }}</div></div>
+        <div class="col-md-4"><div class="text-muted small">채널 전체 조회수</div><div class="fw-semibold">{{ analysis.total_view_count|intcomma }}</div></div>
+        <div class="col-md-4"><div class="text-muted small">전체 영상 수</div><div class="fw-semibold">{{ analysis.video_count|intcomma }}</div></div>
+        <div class="col-md-4"><div class="text-muted small">예상 협찬비</div><div class="fw-semibold">{{ analysis.expected_paid_amount|intcomma }}원</div></div>
+        <div class="col-md-4"><div class="text-muted small">채널 ID</div><div class="fw-semibold">{{ analysis.channel_id }}</div></div>
+    </div>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>최근 분석 영상 개수</span><strong>{{ analysis.recent_video_count|intcomma }}</strong></div></div>
+    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>평균 조회수</span><strong>{{ analysis.recent_avg_views|floatformat:0|intcomma }}</strong></div></div>
+    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>중앙값 조회수</span><strong>{{ analysis.recent_median_views|floatformat:0|intcomma }}</strong></div></div>
+    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>구독자 대비 조회율</span><strong>{{ analysis.subscriber_view_rate|floatformat:2 }}%</strong></div></div>
+    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>평균 기준 조회당 비용</span><strong>{{ analysis.avg_cost_per_view|floatformat:2 }}원</strong></div></div>
+    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>중앙값 기준 조회당 비용</span><strong>{{ analysis.median_cost_per_view|floatformat:2 }}원</strong></div></div>
+</div>
+
+<div class="row g-4 mb-4">
+    <div class="col-lg-6">
+        <div class="dashboard-card h-100">
+            <h2 class="section-title">예상 협찬 단가 분석</h2>
+            <dl class="summary-list">
+                <div><dt>평균 조회수 기준 예상 조회당 비용</dt><dd>{{ analysis.avg_cost_per_view|floatformat:2 }}원</dd></div>
+                <div><dt>중앙값 조회수 기준 예상 조회당 비용</dt><dd>{{ analysis.median_cost_per_view|floatformat:2 }}원</dd></div>
+            </dl>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="dashboard-card h-100">
+            <h2 class="section-title">판단 문구</h2>
+            <div class="alert alert-info mb-0">
+                <ul class="mb-0">
+                    {% for message in judgment_messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="dashboard-card">
+    <h2 class="section-title">최근 영상 목록</h2>
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead>
+            <tr>
+                <th>업로드일</th>
+                <th>영상 제목</th>
+                <th class="text-end">조회수</th>
+                <th class="text-end">좋아요 수</th>
+                <th class="text-end">댓글 수</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for video in analysis.recent_videos.all %}
+                <tr>
+                    <td>{{ video.published_at|default:"-" }}</td>
+                    <td>{{ video.title }}</td>
+                    <td class="text-end">{{ video.view_count|intcomma }}</td>
+                    <td class="text-end">{{ video.like_count|intcomma }}</td>
+                    <td class="text-end">{{ video.comment_count|intcomma }}</td>
+                </tr>
+            {% empty %}
+                <tr><td colspan="5" class="text-center text-muted py-4">저장된 최근 영상 데이터가 없습니다.</td></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

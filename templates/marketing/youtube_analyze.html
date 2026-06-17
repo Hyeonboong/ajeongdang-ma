@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}유튜브 영상 성과 분석 | Marketing ROI Dashboard{% endblock %}
+
+{% block content %}
+<div class="row g-4">
+    <div class="col-lg-8">
+        <div class="page-header">
+            <div>
+                <div class="page-kicker">YouTube Performance</div>
+                <h1 class="page-title">유튜브 협찬 영상 성과 분석</h1>
+                <p class="page-subtitle">영상 링크와 지급 광고비를 기준으로 조회당 비용과 내부 전환 효율을 계산합니다.</p>
+            </div>
+        </div>
+        <div class="dashboard-card">
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {% include "marketing/partials/form_fields.html" %}
+                <div class="d-flex justify-content-end mt-4">
+                    <button class="btn btn-primary" type="submit">분석</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="dashboard-card">
+            <h2 class="section-title">최근 분석</h2>
+            <div class="list-group list-group-flush">
+                {% for result in recent_results %}
+                    <a class="list-group-item list-group-item-action px-0" href="{% url 'marketing:youtube_result' result.pk %}">
+                        <div class="fw-semibold">{{ result.channel_name }}</div>
+                        <small class="text-muted">{{ result.video_title }}</small>
+                    </a>
+                {% empty %}
+                    <p class="text-muted mb-0">아직 분석 결과가 없습니다.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

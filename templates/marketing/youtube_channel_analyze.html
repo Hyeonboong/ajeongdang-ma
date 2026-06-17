@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}유튜버 단가 분석 | Marketing ROI Dashboard{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="page-header">
+            <div>
+                <div class="page-kicker">Creator Pricing</div>
+                <h1 class="page-title">캠페인 협찬 단가 사전 분석</h1>
+                <p class="page-subtitle">캠페인을 선택하고 예상 협찬비를 입력해 연결된 유튜버 채널의 최근 10개 영상 기준 조회당 비용을 계산합니다.</p>
+            </div>
+        </div>
+        <div class="dashboard-card">
+            <form method="post" novalidate>
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label class="form-label" for="{{ form.campaign.id_for_label }}">{{ form.campaign.label }}</label>
+                    {{ form.campaign }}
+                    {% for error in form.campaign.errors %}
+                        <div class="text-danger small mt-1">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="{{ form.expected_paid_amount.id_for_label }}">{{ form.expected_paid_amount.label }}</label>
+                    <div class="input-group">
+                        {{ form.expected_paid_amount }}
+                        <span class="input-group-text">만원</span>
+                    </div>
+                    <div class="form-text" id="expected-paid-preview">입력한 숫자는 만원 단위로 저장됩니다.</div>
+                    {% for error in form.expected_paid_amount.errors %}
+                        <div class="text-danger small mt-1">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="csv-guide">
+                    <strong>분석 기준</strong>
+                    <code>캠페인에 연결된 협찬 유튜브 채널을 기준으로 분석합니다.</code>
+                    <code>캠페인에 유튜브 채널이 없으면 먼저 캠페인을 수정해 채널을 연결해주세요.</code>
+                </div>
+                <div class="d-flex justify-content-end mt-4">
+                    <button class="btn btn-primary" type="submit">분석</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const expectedPaidInput = document.getElementById("id_expected_paid_amount");
+const expectedPaidPreview = document.getElementById("expected-paid-preview");
+
+function formatKoreanBudget(value) {
+    const manwon = Number(value || 0);
+    if (!manwon) return "입력한 숫자는 만원 단위로 저장됩니다.";
+
+    if (manwon >= 10000) {
+        const eok = Math.floor(manwon / 10000);
+        const remain = manwon % 10000;
+        return remain ? `${eok}억 ${remain.toLocaleString()}만원` : `${eok}억원`;
+    }
+    return `${manwon.toLocaleString()}만원`;
+}
+
+if (expectedPaidInput && expectedPaidPreview) {
+    expectedPaidInput.addEventListener("input", () => {
+        expectedPaidPreview.textContent = formatKoreanBudget(expectedPaidInput.value);
+    });
+    expectedPaidPreview.textContent = formatKoreanBudget(expectedPaidInput.value);
+}
+</script>
+{% endblock %}

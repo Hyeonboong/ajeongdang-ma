@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+
+{% block title %}{% if is_update %}캠페인 수정{% else %}캠페인 등록{% endif %} | Marketing ROI Dashboard{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-9">
+        <div class="page-header">
+            <div>
+                <div class="page-kicker">{% if is_update %}Update Campaign{% else %}Create Campaign{% endif %}</div>
+                <h1 class="page-title">{% if is_update %}캠페인 수정{% else %}캠페인 등록{% endif %}</h1>
+                <p class="page-subtitle">협찬 캠페인의 상품, 광고 유형, 상태, 비용 정보를 빠르게 관리합니다.</p>
+            </div>
+        </div>
+
+        <div class="dashboard-card">
+            <form method="post" novalidate>
+                {% csrf_token %}
+
+                <section class="mb-5">
+                    <h2 class="section-title">1. 기본 정보</h2>
+                    <div class="row g-4">
+                        <div class="col-md-12">
+                            <label class="form-label" for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+                            {{ form.name }}
+                            {% for error in form.name.errors %}<div class="text-danger small mt-1">{{ error }}</div>{% endfor %}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="{{ form.service_type.id_for_label }}">{{ form.service_type.label }}</label>
+                            {{ form.service_type }}
+                            {% for error in form.service_type.errors %}<div class="text-danger small mt-1">{{ error }}</div>{% endfor %}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="{{ form.ad_type.id_for_label }}">{{ form.ad_type.label }}</label>
+                            {{ form.ad_type }}
+                            {% for error in form.ad_type.errors %}<div class="text-danger small mt-1">{{ error }}</div>{% endfor %}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="{{ form.status.id_for_label }}">{{ form.status.label }}</label>
+                            {{ form.status }}
+                            {% for error in form.status.errors %}<div class="text-danger small mt-1">{{ error }}</div>{% endfor %}
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-5">
+                    <h2 class="section-title">2. 유튜브 협찬 정보</h2>
+                    <div class="row g-4">
+                        <div class="col-md-12">
+                            <label class="form-label" for="youtube-channel-search">협찬 유튜브 채널 검색</label>
+                            <input class="form-control" id="youtube-channel-search" type="search" placeholder="채널명 또는 주요 콘텐츠로 검색">
+                            <div class="channel-suggestions mt-2 d-none" id="youtube-channel-suggestions"></div>
+                            <div class="form-text">항목을 클릭하면 선택됩니다.</div>
+                        </div>
+                        <div class="col-md-8">
+                            <label class="form-label" for="{{ form.youtube_channel.id_for_label }}">{{ form.youtube_channel.label }}</label>
+                            {{ form.youtube_channel }}
+                            {% for error in form.youtube_channel.errors %}<div class="text-danger small mt-1">{{ error }}</div>{% endfor %}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="{{ form.cost.id_for_label }}">{{ form.cost.label }}</label>
+                            <div class="input-group">
+                                {{ form.cost }}
+                                <span class="input-group-text">만원</span>
+                            </div>
+                            <div class="form-text" id="cost-preview">입력한 숫자는 만원 단위로 저장됩니다.</div>
+                            {% for error in form.cost.errors %}<div class="text-danger small mt-1">{{ error }}</div>{% endfor %}
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="section-title">3. 기간 및 메모</h2>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <label class="form-label" for="{{ form.start_date.id_for_label }}">{{ form.start_date.label }}</label>
+                            {{ form.start_date }}
+                            {% for error in form.start_date.errors %}<div class="text-danger small mt-1">{{ error }}</div>{% endfor %}
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="{{ form.end_date.id_for_label }}">{{ form.end_date.label }}</label>
+                            {{ form.end_date }}
+                            {% for error in form.end_date.errors %}<div class="text-danger small mt-1">{{ error }}</div>{% endfor %}
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label" for="{{ form.memo.id_for_label }}">{{ form.memo.label }}</label>
+                            {{ form.memo }}
+                            {% for error in form.memo.errors %}<div class="text-danger small mt-1">{{ error }}</div>{% endfor %}
+                        </div>
+                    </div>
+                </section>
+
+                {% if form.errors %}
+                    <div class="alert alert-danger mt-4">입력값을 다시 확인해주세요.</div>
+                {% endif %}
+
+                <div class="d-flex justify-content-end gap-2 mt-5">
+                    {% if is_update %}
+                        <a class="btn btn-outline-secondary" href="{% url 'marketing:campaign_detail' campaign.pk %}">취소</a>
+                    {% else %}
+                        <a class="btn btn-outline-secondary" href="{% url 'marketing:campaign_list' %}">취소</a>
+                    {% endif %}
+                    <button class="btn btn-primary" type="submit">{% if is_update %}수정 저장{% else %}저장{% endif %}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const channelSearchInput = document.getElementById("youtube-channel-search");
+const channelSelect = document.getElementById("id_youtube_channel");
+const suggestionBox = document.getElementById("youtube-channel-suggestions");
+const costInput = document.getElementById("id_cost");
+const costPreview = document.getElementById("cost-preview");
+
+function renderChannelSuggestions(keyword = "") {
+    if (!channelSelect || !suggestionBox) return;
+
+    const normalizedKeyword = keyword.trim().toLowerCase();
+    const options = Array.from(channelSelect.options)
+        .filter((option) => option.value)
+        .filter((option) => !normalizedKeyword || option.text.toLowerCase().includes(normalizedKeyword))
+        .slice(0, 8);
+
+    suggestionBox.innerHTML = "";
+
+    if (!normalizedKeyword || !options.length) {
+        suggestionBox.classList.add("d-none");
+        return;
+    }
+
+    options.forEach((option) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "channel-suggestion-item";
+        button.textContent = option.text;
+        button.addEventListener("click", () => {
+            channelSelect.value = option.value;
+            channelSearchInput.value = option.text;
+            suggestionBox.classList.add("d-none");
+        });
+        suggestionBox.appendChild(button);
+    });
+
+    suggestionBox.classList.remove("d-none");
+}
+
+function formatKoreanBudget(value) {
+    const manwon = Number(value || 0);
+    if (!manwon) return "입력한 숫자는 만원 단위로 저장됩니다.";
+
+    if (manwon >= 10000) {
+        const eok = Math.floor(manwon / 10000);
+        const remain = manwon % 10000;
+        return remain ? `${eok}억 ${remain.toLocaleString()}만원` : `${eok}억원`;
+    }
+    return `${manwon.toLocaleString()}만원`;
+}
+
+if (channelSearchInput) {
+    channelSearchInput.addEventListener("input", () => renderChannelSuggestions(channelSearchInput.value));
+    channelSearchInput.addEventListener("focus", () => renderChannelSuggestions(channelSearchInput.value));
+}
+
+document.addEventListener("click", (event) => {
+    if (!suggestionBox || !channelSearchInput) return;
+    if (!suggestionBox.contains(event.target) && event.target !== channelSearchInput) {
+        suggestionBox.classList.add("d-none");
+    }
+});
+
+if (costInput && costPreview) {
+    const updateCostPreview = () => {
+        costPreview.textContent = formatKoreanBudget(costInput.value);
+    };
+    costInput.addEventListener("input", updateCostPreview);
+    updateCostPreview();
+}
+</script>
+{% endblock %}

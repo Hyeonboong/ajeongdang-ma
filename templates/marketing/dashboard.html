@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block title %}대시보드 | Marketing ROI Dashboard{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div>
+        <div class="page-kicker">Overview</div>
+        <h1 class="page-title">마케팅 전환 효율 대시보드</h1>
+        <p class="page-subtitle">광고비가 상담 신청과 가입으로 이어지는 흐름을 캠페인 단위로 분석합니다.</p>
+    </div>
+    <a class="btn btn-primary" href="{% url 'marketing:performance_upload' %}">CSV 업로드</a>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>총 광고비</span><strong>{{ total_cost|intcomma }}원</strong></div></div>
+    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>총 노출수</span><strong>{{ totals.impressions|intcomma }}</strong></div></div>
+    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>총 클릭수</span><strong>{{ totals.clicks|intcomma }}</strong></div></div>
+    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>총 상담 신청 수</span><strong>{{ totals.consultations|intcomma }}</strong></div></div>
+    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>총 가입 수</span><strong>{{ totals.contracts|intcomma }}</strong></div></div>
+    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>평균 상담당 비용</span><strong>{{ totals.avg_cost_per_consultation|floatformat:0|intcomma }}원</strong></div></div>
+    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>평균 가입당 비용</span><strong>{{ totals.avg_cost_per_contract|floatformat:0|intcomma }}원</strong></div></div>
+</div>
+
+<div class="row g-4 mb-4">
+    <div class="col-lg-6">
+        <div class="dashboard-card h-100 chart-box">
+            <h2 class="section-title">채널별 광고비</h2>
+            <canvas id="channelCostChart" height="190"></canvas>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="dashboard-card h-100 chart-box">
+            <h2 class="section-title">캠페인별 가입당 비용</h2>
+            <canvas id="campaignCpaChart" height="190"></canvas>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-6">
+        <div class="dashboard-card h-100">
+            <h2 class="section-title">효율 좋은 캠페인 TOP 5</h2>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead>
+                    <tr>
+                        <th>캠페인</th>
+                        <th>채널</th>
+                        <th class="text-end">가입 수</th>
+                        <th class="text-end">가입당 비용</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for campaign in efficient_campaigns %}
+                        <tr>
+                            <td><a class="fw-semibold" href="{{ campaign.get_absolute_url }}">{{ campaign.name }}</a></td>
+                            <td>{{ campaign.channel }}</td>
+                            <td class="text-end">{{ campaign.total_contracts|intcomma }}</td>
+                            <td class="text-end fw-semibold">{{ campaign.cost_per_contract|floatformat:0|intcomma }}원</td>
+                        </tr>
+                    {% empty %}
+                        <tr><td colspan="4" class="text-center text-muted py-4">가입 데이터가 있는 캠페인이 없습니다.</td></tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="dashboard-card h-100">
+            <h2 class="section-title">비효율 캠페인 TOP 5</h2>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead>
+                    <tr>
+                        <th>캠페인</th>
+                        <th>채널</th>
+                        <th class="text-end">가입 수</th>
+                        <th class="text-end">가입당 비용</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for campaign in inefficient_campaigns %}
+                        <tr>
+                            <td><a class="fw-semibold" href="{{ campaign.get_absolute_url }}">{{ campaign.name }}</a></td>
+                            <td>{{ campaign.channel }}</td>
+                            <td class="text-end">{{ campaign.total_contracts|intcomma }}</td>
+                            <td class="text-end fw-semibold">{{ campaign.cost_per_contract|floatformat:0|intcomma }}원</td>
+                        </tr>
+                    {% empty %}
+                        <tr><td colspan="4" class="text-center text-muted py-4">가입 데이터가 있는 캠페인이 없습니다.</td></tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ channel_labels|json_script:"channel-labels" }}
+{{ channel_costs|json_script:"channel-costs" }}
+{{ campaign_cpa_labels|json_script:"campaign-cpa-labels" }}
+{{ campaign_cpa_values|json_script:"campaign-cpa-values" }}
+{% endblock %}
+
+{% block scripts %}
+<script>
+const channelLabels = JSON.parse(document.getElementById("channel-labels").textContent);
+const channelCosts = JSON.parse(document.getElementById("channel-costs").textContent);
+const campaignCpaLabels = JSON.parse(document.getElementById("campaign-cpa-labels").textContent);
+const campaignCpaValues = JSON.parse(document.getElementById("campaign-cpa-values").textContent);
+
+new Chart(document.getElementById("channelCostChart"), {
+    type: "doughnut",
+    data: {
+        labels: channelLabels,
+        datasets: [{
+            data: channelCosts,
+            backgroundColor: ["#2563eb", "#1e40af", "#0891b2", "#16a34a", "#f59e0b", "#64748b"],
+            borderWidth: 0
+        }]
+    },
+    options: {responsive: true, plugins: {legend: {position: "bottom"}}}
+});
+
+new Chart(document.getElementById("campaignCpaChart"), {
+    type: "bar",
+    data: {
+        labels: campaignCpaLabels,
+        datasets: [{label: "가입당 비용", data: campaignCpaValues, backgroundColor: "#2563eb", borderRadius: 8}]
+    },
+    options: {responsive: true, plugins: {legend: {display: false}}, scales: {y: {beginAtZero: true}, x: {grid: {display: false}}}}
+});
+</script>
+{% endblock %}

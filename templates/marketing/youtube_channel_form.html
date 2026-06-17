@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}유튜버 채널 등록 | Marketing ROI Dashboard{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="page-header">
+            <div>
+                <div class="page-kicker">Creator Setup</div>
+                <h1 class="page-title">유튜버 채널 등록</h1>
+                <p class="page-subtitle">채널 주소와 주요 콘텐츠를 입력하면 구독자 수와 최근 영상 지표를 자동 저장합니다.</p>
+            </div>
+        </div>
+        <div class="dashboard-card">
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {% include "marketing/partials/form_fields.html" %}
+                <div class="d-flex justify-content-end gap-2 mt-4">
+                    <a class="btn btn-outline-secondary" href="{% url 'marketing:youtube_channel_list' %}">취소</a>
+                    <button class="btn btn-primary" type="submit">저장</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

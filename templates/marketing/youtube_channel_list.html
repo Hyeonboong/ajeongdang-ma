@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block title %}유튜버 채널 관리 | Marketing ROI Dashboard{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div>
+        <div class="page-kicker">Creator CRM</div>
+        <h1 class="page-title">유튜버 채널 관리</h1>
+        <p class="page-subtitle">협찬 후보 채널을 저장하고 캠페인에 연결해 관리합니다.</p>
+    </div>
+    <a class="btn btn-primary" href="{% url 'marketing:youtube_channel_create' %}">채널 등록</a>
+</div>
+
+<div class="dashboard-card mb-4">
+    <form class="row g-3 align-items-end" method="get">
+        <div class="col-lg-10">
+            <label class="form-label" for="channel-search">채널 검색</label>
+            <input class="form-control" id="channel-search" type="search" name="q" value="{{ query }}" placeholder="채널명으로 검색">
+        </div>
+        <div class="col-lg-2 d-grid">
+            <button class="btn btn-outline-primary" type="submit">검색</button>
+        </div>
+    </form>
+</div>
+
+<div class="dashboard-card">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="section-title mb-0">저장된 채널</h2>
+        <span class="section-note">구독자 수와 최근 조회수 기준으로 협찬 후보를 비교합니다.</span>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead>
+            <tr>
+                <th>채널명</th>
+                <th>주요 콘텐츠</th>
+                <th class="text-end">구독자 수</th>
+                <th class="text-end">평균 조회수</th>
+                <th class="text-end">중앙값 조회수</th>
+                <th class="text-end">조회율</th>
+                <th class="text-center">관리</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for channel in channels %}
+                <tr>
+                    <td>
+                        <div class="fw-semibold">{{ channel.channel_name }}</div>
+                        <small class="text-muted">{{ channel.channel_url|truncatechars:42 }}</small>
+                    </td>
+                    <td>{{ channel.main_content|default:"-" }}</td>
+                    <td class="text-end fw-semibold">{{ channel.subscriber_count|intcomma }}</td>
+                    <td class="text-end">{{ channel.recent_avg_views|floatformat:0|intcomma }}</td>
+                    <td class="text-end">{{ channel.recent_median_views|floatformat:0|intcomma }}</td>
+                    <td class="text-end"><span class="badge-soft">{{ channel.subscriber_view_rate|floatformat:2 }}%</span></td>
+                    <td class="text-center">
+                        <div class="d-inline-flex gap-2">
+                            <button class="btn btn-sm btn-outline-secondary" type="button" disabled>동기화</button>
+                            <a class="btn btn-sm btn-outline-primary" href="{% url 'marketing:youtube_channel_detail' channel.pk %}">상세</a>
+                            <form class="d-inline" method="post" action="{% url 'marketing:youtube_channel_delete' channel.pk %}">
+                                {% csrf_token %}
+                                <button class="btn btn-sm btn-outline-danger" type="submit" onclick="return confirm('이 유튜버 채널을 삭제할까요? 연결된 캠페인에서는 채널 연결만 해제됩니다.');">삭제</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr><td colspan="7" class="text-center text-muted py-5">등록된 유튜버 채널이 없습니다.</td></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
