@@ -39,17 +39,12 @@
     </div>
 </div>
 
-<div class="row g-3 mb-4">
-    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>총 노출수</span><strong>{{ summary.total_impressions|intcomma }}</strong></div></div>
-    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>총 클릭수</span><strong>{{ summary.total_clicks|intcomma }}</strong></div></div>
-    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>총 상담 신청 수</span><strong>{{ summary.total_consultations|intcomma }}</strong></div></div>
-    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>총 가입 수</span><strong>{{ summary.total_contracts|intcomma }}</strong></div></div>
-    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>평균 CTR</span><strong>{{ summary.avg_ctr|floatformat:2 }}%</strong></div></div>
-    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>평균 상담 전환율</span><strong>{{ summary.avg_consultation_rate|floatformat:2 }}%</strong></div></div>
-    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>평균 가입 전환율</span><strong>{{ summary.avg_contract_rate|floatformat:2 }}%</strong></div></div>
-    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>평균 상담당 비용</span><strong>{{ summary.avg_cost_per_consultation|floatformat:0|intcomma }}원</strong></div></div>
-    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>평균 가입당 비용</span><strong>{{ summary.avg_cost_per_contract|floatformat:0|intcomma }}원</strong></div></div>
+{% if campaign.memo %}
+<div class="dashboard-card mb-4">
+    <h2 class="section-title">기타 메모</h2>
+    <p class="mb-0 text-pre-wrap">{{ campaign.memo|linebreaksbr }}</p>
 </div>
+{% endif %}
 
 <div class="dashboard-card mb-4">
     <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4">
@@ -60,13 +55,16 @@
     </div>
 
     <div class="row g-3 mb-4">
+        <div class="col-md-4 col-xl-3"><div class="metric-card"><span>영상 조회수</span><strong>{{ tracking_summary.video_views|floatformat:0|intcomma }}</strong></div></div>
         <div class="col-md-4 col-xl-3"><div class="metric-card"><span>링크 클릭 수</span><strong>{{ tracking_summary.clicks|intcomma }}</strong></div></div>
-        <div class="col-md-4 col-xl-3"><div class="metric-card"><span>링크 상담 신청 수</span><strong>{{ tracking_summary.consultations|intcomma }}</strong></div></div>
-        <div class="col-md-4 col-xl-3"><div class="metric-card"><span>링크 가입 수</span><strong>{{ tracking_summary.contracts|intcomma }}</strong></div></div>
-        <div class="col-md-4 col-xl-3"><div class="metric-card"><span>링크 상담 전환율</span><strong>{{ tracking_summary.consultation_rate|floatformat:2 }}%</strong></div></div>
-        <div class="col-md-4 col-xl-3"><div class="metric-card"><span>링크 가입 전환율</span><strong>{{ tracking_summary.contract_rate|floatformat:2 }}%</strong></div></div>
-        <div class="col-md-4 col-xl-3"><div class="metric-card"><span>링크 상담당 비용</span><strong>{{ tracking_summary.cost_per_consultation|floatformat:0|intcomma }}원</strong></div></div>
-        <div class="col-md-4 col-xl-3"><div class="metric-card"><span>링크 가입당 비용</span><strong>{{ tracking_summary.cost_per_contract|floatformat:0|intcomma }}원</strong></div></div>
+        <div class="col-md-4 col-xl-3"><div class="metric-card"><span>상담 신청 수</span><strong>{{ tracking_summary.consultations|intcomma }}</strong></div></div>
+        <div class="col-md-4 col-xl-3"><div class="metric-card"><span>가입 수</span><strong>{{ tracking_summary.contracts|intcomma }}</strong></div></div>
+        <div class="col-md-4 col-xl-3"><div class="metric-card"><span>조회당 비용</span><strong>{{ tracking_summary.cost_per_view|floatformat:2 }}원</strong></div></div>
+        <div class="col-md-4 col-xl-3"><div class="metric-card"><span>링크 클릭률</span><strong>{{ tracking_summary.click_rate|floatformat:2 }}%</strong></div></div>
+        <div class="col-md-4 col-xl-3"><div class="metric-card"><span>클릭→상담 전환율</span><strong>{{ tracking_summary.consultation_rate|floatformat:2 }}%</strong></div></div>
+        <div class="col-md-4 col-xl-3"><div class="metric-card"><span>상담→가입 전환율</span><strong>{{ tracking_summary.contract_rate|floatformat:2 }}%</strong></div></div>
+        <div class="col-md-4 col-xl-3"><div class="metric-card"><span>상담당 비용</span><strong>{{ tracking_summary.cost_per_consultation|floatformat:0|intcomma }}원</strong></div></div>
+        <div class="col-md-4 col-xl-3"><div class="metric-card"><span>가입당 비용</span><strong>{{ tracking_summary.cost_per_contract|floatformat:0|intcomma }}원</strong></div></div>
     </div>
 
     <form method="post" action="{% url 'marketing:tracking_link_create' campaign.pk %}" class="row g-3 align-items-end mb-4">
@@ -93,7 +91,7 @@
                 <th class="text-end">클릭</th>
                 <th class="text-end">상담</th>
                 <th class="text-end">가입</th>
-                <th class="text-end">상담 전환율</th>
+                <th class="text-end">클릭→상담</th>
                 <th class="text-end">가입당 비용</th>
                 <th class="text-center">테스트 이벤트</th>
             </tr>
@@ -135,45 +133,4 @@
     </div>
 </div>
 
-<div class="dashboard-card">
-    <h2 class="section-title">캠페인 성과 목록</h2>
-    <div class="table-responsive">
-        <table class="table table-hover align-middle mb-0">
-            <thead>
-            <tr>
-                <th>일자</th>
-                <th>광고 문구</th>
-                <th class="text-end">노출수</th>
-                <th class="text-end">클릭수</th>
-                <th class="text-end">상담 신청</th>
-                <th class="text-end">가입</th>
-                <th class="text-end">CTR</th>
-                <th class="text-end">상담 전환율</th>
-                <th class="text-end">가입 전환율</th>
-                <th class="text-end">상담당 비용</th>
-                <th class="text-end">가입당 비용</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for performance in performances %}
-                <tr>
-                    <td>{{ performance.date }}</td>
-                    <td class="text-truncate" style="max-width: 280px;">{{ performance.ad_copy }}</td>
-                    <td class="text-end">{{ performance.impressions|intcomma }}</td>
-                    <td class="text-end">{{ performance.clicks|intcomma }}</td>
-                    <td class="text-end">{{ performance.consultations|intcomma }}</td>
-                    <td class="text-end">{{ performance.contracts|intcomma }}</td>
-                    <td class="text-end">{{ performance.ctr|floatformat:2 }}%</td>
-                    <td class="text-end">{{ performance.consultation_rate|floatformat:2 }}%</td>
-                    <td class="text-end">{{ performance.contract_rate|floatformat:2 }}%</td>
-                    <td class="text-end">{{ performance.cost_per_consultation|floatformat:0|intcomma }}원</td>
-                    <td class="text-end">{{ performance.cost_per_contract|floatformat:0|intcomma }}원</td>
-                </tr>
-            {% empty %}
-                <tr><td colspan="11" class="text-center text-muted py-5">등록된 성과 데이터가 없습니다.</td></tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
-</div>
 {% endblock %}

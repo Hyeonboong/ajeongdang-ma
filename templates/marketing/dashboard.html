@@ -6,91 +6,248 @@
 {% block content %}
 <div class="page-header">
     <div>
-        <div class="page-kicker">Overview</div>
-        <h1 class="page-title">마케팅 전환 효율 대시보드</h1>
-        <p class="page-subtitle">광고비가 상담 신청과 가입으로 이어지는 흐름을 캠페인 단위로 분석합니다.</p>
+        <div class="page-kicker">Dashboard</div>
+        <h1 class="page-title">유튜브 협찬 운영 대시보드</h1>
+        <p class="page-subtitle">전체 합산보다 캠페인별 단가, 전환, 유튜버 후보를 나눠 확인합니다.</p>
     </div>
-    <a class="btn btn-primary" href="{% url 'marketing:performance_upload' %}">CSV 업로드</a>
+    <div class="d-flex gap-2">
+        <a class="btn btn-outline-secondary" href="{% url 'marketing:youtube_channel_list' %}">유튜버 채널</a>
+        <a class="btn btn-primary" href="{% url 'marketing:campaign_create' %}">캠페인 등록</a>
+    </div>
 </div>
 
 <div class="row g-3 mb-4">
-    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>총 광고비</span><strong>{{ total_cost|intcomma }}원</strong></div></div>
-    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>총 노출수</span><strong>{{ totals.impressions|intcomma }}</strong></div></div>
-    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>총 클릭수</span><strong>{{ totals.clicks|intcomma }}</strong></div></div>
-    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>총 상담 신청 수</span><strong>{{ totals.consultations|intcomma }}</strong></div></div>
-    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>총 가입 수</span><strong>{{ totals.contracts|intcomma }}</strong></div></div>
-    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>평균 상담당 비용</span><strong>{{ totals.avg_cost_per_consultation|floatformat:0|intcomma }}원</strong></div></div>
-    <div class="col-md-4 col-xl-3"><div class="metric-card"><span>평균 가입당 비용</span><strong>{{ totals.avg_cost_per_contract|floatformat:0|intcomma }}원</strong></div></div>
-</div>
-
-<div class="row g-4 mb-4">
-    <div class="col-lg-6">
-        <div class="dashboard-card h-100 chart-box">
-            <h2 class="section-title">채널별 광고비</h2>
-            <canvas id="channelCostChart" height="190"></canvas>
+    <div class="col-md-6 col-xl-3">
+        <div class="metric-card">
+            <span>등록 유튜버</span>
+            <strong>{{ operation_metrics.channel_count|intcomma }}</strong>
         </div>
     </div>
-    <div class="col-lg-6">
-        <div class="dashboard-card h-100 chart-box">
-            <h2 class="section-title">캠페인별 가입당 비용</h2>
-            <canvas id="campaignCpaChart" height="190"></canvas>
+    <div class="col-md-6 col-xl-3">
+        <div class="metric-card">
+            <span>진행 캠페인</span>
+            <strong>{{ operation_metrics.active_campaign_count|intcomma }}</strong>
         </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="metric-card">
+            <span>단가 분석 기록</span>
+            <strong>{{ operation_metrics.analysis_count|intcomma }}</strong>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="metric-card">
+            <span>성과 추적 링크</span>
+            <strong>{{ operation_metrics.tracking_link_count|intcomma }}</strong>
+        </div>
+    </div>
+</div>
+
+<div class="dashboard-card mb-4">
+    <div class="section-header">
+        <div>
+            <h2 class="section-title">효율 캠페인 TOP 5</h2>
+            <span class="section-note">최근 10개 평균 조회수 기준 조회당 비용이 낮은 캠페인입니다.</span>
+        </div>
+        <a class="btn btn-sm btn-outline-primary" href="{% url 'marketing:campaign_list' %}">전체 캠페인</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0 dashboard-summary-table">
+            <thead>
+            <tr>
+                <th>캠페인</th>
+                <th>유튜버</th>
+                <th>상품</th>
+                <th>상태</th>
+                <th class="text-end">광고비</th>
+                <th class="text-end">최근 10개 평균 조회수</th>
+                <th class="text-end">조회당 비용</th>
+                <th class="text-end">클릭</th>
+                <th class="text-end">상담</th>
+                <th class="text-end">가입</th>
+                <th>효율 판단</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for summary in efficient_campaigns %}
+                <tr>
+                    <td>
+                        <a class="fw-semibold" href="{{ summary.campaign.get_absolute_url }}">{{ summary.campaign.name|default:"이름 없음" }}</a>
+                        <div class="text-muted small">{{ summary.campaign.ad_type|default:"광고 유형 미입력" }}</div>
+                    </td>
+                    <td>
+                        {% if summary.youtube_channel %}
+                            <a class="fw-semibold" href="{% url 'marketing:youtube_channel_detail' summary.youtube_channel.pk %}">
+                                {{ summary.youtube_channel.channel_name }}
+                            </a>
+                            <div class="text-muted small">{{ summary.youtube_channel.main_content|default:"-" }}</div>
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+                    <td>{{ summary.campaign.service_type|default:"-" }}</td>
+                    <td><span class="badge-soft">{{ summary.campaign.status|default:"-" }}</span></td>
+                    <td class="text-end fw-semibold">{{ summary.campaign.cost|intcomma }}원</td>
+                    <td class="text-end">{{ summary.video_views|floatformat:0|intcomma }}</td>
+                    <td class="text-end">
+                        {% if summary.has_video_views %}
+                            {{ summary.expected_cost_per_view|floatformat:2 }}원
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+                    <td class="text-end">{{ summary.clicks|intcomma }}</td>
+                    <td class="text-end">{{ summary.consultations|intcomma }}</td>
+                    <td class="text-end">{{ summary.contracts|intcomma }}</td>
+                    <td>{{ summary.efficiency_comment }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="11" class="text-center text-muted py-4">조회수 기준으로 비교할 캠페인이 없습니다.</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="dashboard-card mb-4">
+    <div class="section-header">
+        <div>
+            <h2 class="section-title">비효율 캠페인 TOP 5</h2>
+            <span class="section-note">최근 10개 평균 조회수 기준 조회당 비용이 높은 캠페인입니다.</span>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0 dashboard-summary-table">
+            <thead>
+            <tr>
+                <th>캠페인</th>
+                <th>유튜버</th>
+                <th>상품</th>
+                <th>상태</th>
+                <th class="text-end">광고비</th>
+                <th class="text-end">최근 10개 평균 조회수</th>
+                <th class="text-end">조회당 비용</th>
+                <th class="text-end">클릭</th>
+                <th class="text-end">상담</th>
+                <th class="text-end">가입</th>
+                <th>효율 판단</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for summary in inefficient_campaigns %}
+                <tr>
+                    <td>
+                        <a class="fw-semibold" href="{{ summary.campaign.get_absolute_url }}">{{ summary.campaign.name|default:"이름 없음" }}</a>
+                        <div class="text-muted small">{{ summary.campaign.ad_type|default:"광고 유형 미입력" }}</div>
+                    </td>
+                    <td>
+                        {% if summary.youtube_channel %}
+                            <a class="fw-semibold" href="{% url 'marketing:youtube_channel_detail' summary.youtube_channel.pk %}">
+                                {{ summary.youtube_channel.channel_name }}
+                            </a>
+                            <div class="text-muted small">{{ summary.youtube_channel.main_content|default:"-" }}</div>
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+                    <td>{{ summary.campaign.service_type|default:"-" }}</td>
+                    <td><span class="badge-soft">{{ summary.campaign.status|default:"-" }}</span></td>
+                    <td class="text-end fw-semibold">{{ summary.campaign.cost|intcomma }}원</td>
+                    <td class="text-end">{{ summary.video_views|floatformat:0|intcomma }}</td>
+                    <td class="text-end">
+                        {% if summary.has_video_views %}
+                            {{ summary.expected_cost_per_view|floatformat:2 }}원
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+                    <td class="text-end">{{ summary.clicks|intcomma }}</td>
+                    <td class="text-end">{{ summary.consultations|intcomma }}</td>
+                    <td class="text-end">{{ summary.contracts|intcomma }}</td>
+                    <td>{{ summary.efficiency_comment }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="11" class="text-center text-muted py-4">조회수 기준으로 비교할 캠페인이 없습니다.</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
 </div>
 
 <div class="row g-4">
-    <div class="col-lg-6">
+    <div class="col-xl-6">
         <div class="dashboard-card h-100">
-            <h2 class="section-title">효율 좋은 캠페인 TOP 5</h2>
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">유튜버 후보 TOP 5</h2>
+                    <span class="section-note">구독자 대비 조회율이 높은 채널을 우선 확인합니다.</span>
+                </div>
+            </div>
             <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0">
                     <thead>
                     <tr>
-                        <th>캠페인</th>
                         <th>채널</th>
-                        <th class="text-end">가입 수</th>
-                        <th class="text-end">가입당 비용</th>
+                        <th>콘텐츠</th>
+                        <th class="text-end">구독자</th>
+                        <th class="text-end">일반 영상 기준 조회수</th>
+                        <th class="text-end">조회율</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {% for campaign in efficient_campaigns %}
+                    {% for channel in youtube_candidates %}
                         <tr>
-                            <td><a class="fw-semibold" href="{{ campaign.get_absolute_url }}">{{ campaign.name }}</a></td>
-                            <td>{{ campaign.channel }}</td>
-                            <td class="text-end">{{ campaign.total_contracts|intcomma }}</td>
-                            <td class="text-end fw-semibold">{{ campaign.cost_per_contract|floatformat:0|intcomma }}원</td>
+                            <td><a class="fw-semibold" href="{% url 'marketing:youtube_channel_detail' channel.pk %}">{{ channel.channel_name }}</a></td>
+                            <td>{{ channel.main_content|default:"-" }}</td>
+                            <td class="text-end">{{ channel.subscriber_count|intcomma }}</td>
+                            <td class="text-end">{{ channel.recent_median_views|floatformat:0|intcomma }}</td>
+                            <td class="text-end"><span class="badge-soft">{{ channel.subscriber_view_rate|floatformat:2 }}%</span></td>
                         </tr>
                     {% empty %}
-                        <tr><td colspan="4" class="text-center text-muted py-4">가입 데이터가 있는 캠페인이 없습니다.</td></tr>
+                        <tr><td colspan="5" class="text-center text-muted py-4">등록된 유튜버 채널이 없습니다.</td></tr>
                     {% endfor %}
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    <div class="col-lg-6">
+    <div class="col-xl-6">
         <div class="dashboard-card h-100">
-            <h2 class="section-title">비효율 캠페인 TOP 5</h2>
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">최근 단가 사전분석</h2>
+                    <span class="section-note">예상 협찬비 기준 조회당 비용 판단 기록입니다.</span>
+                </div>
+                <a class="btn btn-sm btn-outline-primary" href="{% url 'marketing:youtube_channel_analyze' %}">분석하기</a>
+            </div>
             <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0">
                     <thead>
                     <tr>
                         <th>캠페인</th>
                         <th>채널</th>
-                        <th class="text-end">가입 수</th>
-                        <th class="text-end">가입당 비용</th>
+                        <th class="text-end">예상 협찬비</th>
+                        <th class="text-end">조회당 비용</th>
+                        <th class="text-center">결과</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {% for campaign in inefficient_campaigns %}
+                    {% for analysis in recent_analyses %}
                         <tr>
-                            <td><a class="fw-semibold" href="{{ campaign.get_absolute_url }}">{{ campaign.name }}</a></td>
-                            <td>{{ campaign.channel }}</td>
-                            <td class="text-end">{{ campaign.total_contracts|intcomma }}</td>
-                            <td class="text-end fw-semibold">{{ campaign.cost_per_contract|floatformat:0|intcomma }}원</td>
+                            <td>{{ analysis.campaign.name|default:"-" }}</td>
+                            <td class="fw-semibold">{{ analysis.channel_name }}</td>
+                            <td class="text-end">{{ analysis.expected_paid_amount|intcomma }}원</td>
+                            <td class="text-end">{{ analysis.avg_cost_per_view|floatformat:2 }}원</td>
+                            <td class="text-center">
+                                <a class="btn btn-sm btn-outline-primary" href="{% url 'marketing:youtube_channel_result' analysis.pk %}">보기</a>
+                            </td>
                         </tr>
                     {% empty %}
-                        <tr><td colspan="4" class="text-center text-muted py-4">가입 데이터가 있는 캠페인이 없습니다.</td></tr>
+                        <tr><td colspan="5" class="text-center text-muted py-4">아직 단가 분석 기록이 없습니다.</td></tr>
                     {% endfor %}
                     </tbody>
                 </table>
@@ -98,40 +255,4 @@
         </div>
     </div>
 </div>
-
-{{ channel_labels|json_script:"channel-labels" }}
-{{ channel_costs|json_script:"channel-costs" }}
-{{ campaign_cpa_labels|json_script:"campaign-cpa-labels" }}
-{{ campaign_cpa_values|json_script:"campaign-cpa-values" }}
-{% endblock %}
-
-{% block scripts %}
-<script>
-const channelLabels = JSON.parse(document.getElementById("channel-labels").textContent);
-const channelCosts = JSON.parse(document.getElementById("channel-costs").textContent);
-const campaignCpaLabels = JSON.parse(document.getElementById("campaign-cpa-labels").textContent);
-const campaignCpaValues = JSON.parse(document.getElementById("campaign-cpa-values").textContent);
-
-new Chart(document.getElementById("channelCostChart"), {
-    type: "doughnut",
-    data: {
-        labels: channelLabels,
-        datasets: [{
-            data: channelCosts,
-            backgroundColor: ["#2563eb", "#1e40af", "#0891b2", "#16a34a", "#f59e0b", "#64748b"],
-            borderWidth: 0
-        }]
-    },
-    options: {responsive: true, plugins: {legend: {position: "bottom"}}}
-});
-
-new Chart(document.getElementById("campaignCpaChart"), {
-    type: "bar",
-    data: {
-        labels: campaignCpaLabels,
-        datasets: [{label: "가입당 비용", data: campaignCpaValues, backgroundColor: "#2563eb", borderRadius: 8}]
-    },
-    options: {responsive: true, plugins: {legend: {display: false}}, scales: {y: {beginAtZero: true}, x: {grid: {display: false}}}}
-});
-</script>
 {% endblock %}

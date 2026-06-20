@@ -116,6 +116,14 @@ const suggestionBox = document.getElementById("youtube-channel-suggestions");
 const costInput = document.getElementById("id_cost");
 const costPreview = document.getElementById("cost-preview");
 
+function selectYoutubeChannel(option) {
+    if (!option || !channelSelect || !channelSearchInput || !suggestionBox) return;
+    channelSelect.value = option.value;
+    channelSearchInput.value = option.text;
+    channelSelect.dispatchEvent(new Event("change", { bubbles: true }));
+    suggestionBox.classList.add("d-none");
+}
+
 function renderChannelSuggestions(keyword = "") {
     if (!channelSelect || !suggestionBox) return;
 
@@ -137,15 +145,15 @@ function renderChannelSuggestions(keyword = "") {
         button.type = "button";
         button.className = "channel-suggestion-item";
         button.textContent = option.text;
-        button.addEventListener("click", () => {
-            channelSelect.value = option.value;
-            channelSearchInput.value = option.text;
-            suggestionBox.classList.add("d-none");
+        button.addEventListener("mousedown", (event) => {
+            event.preventDefault();
+            selectYoutubeChannel(option);
         });
         suggestionBox.appendChild(button);
     });
 
     suggestionBox.classList.remove("d-none");
+    return options;
 }
 
 function formatKoreanBudget(value) {
@@ -161,8 +169,30 @@ function formatKoreanBudget(value) {
 }
 
 if (channelSearchInput) {
-    channelSearchInput.addEventListener("input", () => renderChannelSuggestions(channelSearchInput.value));
+    channelSearchInput.addEventListener("input", () => {
+        const options = renderChannelSuggestions(channelSearchInput.value) || [];
+        const normalizedKeyword = channelSearchInput.value.trim().toLowerCase();
+        const exactOption = options.find((option) => option.text.toLowerCase() === normalizedKeyword);
+        if (exactOption) {
+            selectYoutubeChannel(exactOption);
+        }
+    });
     channelSearchInput.addEventListener("focus", () => renderChannelSuggestions(channelSearchInput.value));
+    channelSearchInput.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter") return;
+        const options = renderChannelSuggestions(channelSearchInput.value) || [];
+        if (options.length) {
+            event.preventDefault();
+            selectYoutubeChannel(options[0]);
+        }
+    });
+}
+
+if (channelSelect && channelSearchInput) {
+    channelSelect.addEventListener("change", () => {
+        const selectedOption = channelSelect.options[channelSelect.selectedIndex];
+        channelSearchInput.value = selectedOption && selectedOption.value ? selectedOption.text : "";
+    });
 }
 
 document.addEventListener("click", (event) => {

@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
-{% block title %}유튜브 영상 성과 분석 | Marketing ROI Dashboard{% endblock %}
+{% block title %}캠페인 전환 성과 분석 | Marketing ROI Dashboard{% endblock %}
 
 {% block content %}
 <div class="row g-4">
     <div class="col-lg-8">
         <div class="page-header">
             <div>
-                <div class="page-kicker">YouTube Performance</div>
-                <h1 class="page-title">유튜브 협찬 영상 성과 분석</h1>
-                <p class="page-subtitle">영상 링크와 지급 광고비를 기준으로 조회당 비용과 내부 전환 효율을 계산합니다.</p>
+                <div class="page-kicker">Campaign Performance</div>
+                <h1 class="page-title">캠페인 전환 성과 분석</h1>
+                <p class="page-subtitle">캠페인 광고비와 내부 상담/가입 데이터를 기준으로 전환 효율을 계산합니다.</p>
             </div>
         </div>
         <div class="dashboard-card">
@@ -38,4 +38,32 @@
         </div>
     </div>
 </div>
+{{ campaign_defaults|json_script:"campaign-defaults" }}
+{% endblock %}
+
+{% block scripts %}
+<script>
+const campaignDefaults = JSON.parse(document.getElementById("campaign-defaults").textContent);
+const campaignSelect = document.getElementById("id_campaign");
+const consultationInput = document.getElementById("id_consultation_count");
+const contractInput = document.getElementById("id_contract_count");
+
+function fillCampaignDefaults() {
+    if (!campaignSelect) return;
+    const selected = campaignDefaults[campaignSelect.value];
+    if (!selected) return;
+
+    if (consultationInput) {
+        consultationInput.value = selected.consultation_count || 0;
+    }
+    if (contractInput) {
+        contractInput.value = selected.contract_count || 0;
+    }
+}
+
+if (campaignSelect) {
+    campaignSelect.addEventListener("change", fillCampaignDefaults);
+    fillCampaignDefaults();
+}
+</script>
 {% endblock %}

@@ -4,12 +4,19 @@ from .models import (
     Campaign,
     CampaignPerformance,
     ConversionEvent,
+    MarketingSetting,
     TrackingLink,
     YouTubeChannel,
     YouTubeChannelAnalysis,
+    YouTubeChannelRecentVideo,
     YouTubeInfluencerAnalysis,
     YouTubeRecentVideo,
 )
+
+
+@admin.register(MarketingSetting)
+class MarketingSettingAdmin(admin.ModelAdmin):
+    list_display = ("id", "good_contract_cost", "cpv_good_max", "cpv_normal_max", "cpv_review_max", "updated_at")
 
 
 @admin.register(Campaign)
@@ -103,6 +110,7 @@ class YouTubeChannelAdmin(admin.ModelAdmin):
         "channel_name",
         "main_content",
         "subscriber_count",
+        "recent_latest_views",
         "recent_avg_views",
         "recent_median_views",
         "subscriber_view_rate",
@@ -115,6 +123,7 @@ class YouTubeChannelAdmin(admin.ModelAdmin):
         "total_view_count",
         "video_count",
         "recent_video_count",
+        "recent_latest_views",
         "recent_avg_views",
         "recent_median_views",
         "recent_min_views",
@@ -123,6 +132,13 @@ class YouTubeChannelAdmin(admin.ModelAdmin):
         "recent_avg_comments",
         "subscriber_view_rate",
     )
+
+
+@admin.register(YouTubeChannelRecentVideo)
+class YouTubeChannelRecentVideoAdmin(admin.ModelAdmin):
+    list_display = ("id", "channel", "title", "view_count", "like_count", "comment_count", "published_at")
+    search_fields = ("channel__channel_name", "title", "video_id")
+    list_filter = ("channel", "published_at")
 
 
 class YouTubeRecentVideoInline(admin.TabularInline):

@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Campaign, TrackingLink, YouTubeChannel
+from .models import Campaign, MarketingSetting, TrackingLink, YouTubeChannel
 
 
 class YouTubeChannelChoiceField(forms.ModelChoiceField):
@@ -100,18 +100,6 @@ class CampaignForm(forms.ModelForm):
         return campaign
 
 
-class CSVUploadForm(forms.Form):
-    csv_file = forms.FileField(
-        label="CSV 파일",
-        help_text="campaign_name,channel,ad_type,cost,ad_copy,impressions,clicks,consultations,contracts,date 컬럼을 사용합니다.",
-    )
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields["destination_url"].required = True
-        _apply_bootstrap_classes(self.fields)
-
-
 class TrackingLinkForm(forms.ModelForm):
     class Meta:
         model = TrackingLink
@@ -127,17 +115,16 @@ class TrackingLinkForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.fields["destination_url"].required = True
         _apply_bootstrap_classes(self.fields)
 
 
 class YoutubeAnalyzeForm(forms.Form):
-    youtube_url = forms.URLField(label="유튜브 영상 링크")
-    paid_amount = forms.IntegerField(label="지급 광고비", min_value=0)
     campaign = forms.ModelChoiceField(
         label="연결할 캠페인",
         queryset=Campaign.objects.all(),
-        required=False,
-        empty_label="선택 안 함",
+        required=True,
+        empty_label="캠페인을 선택하세요",
     )
     consultation_count = forms.IntegerField(label="내부 상담수", min_value=0, required=False)
     contract_count = forms.IntegerField(label="내부 가입수", min_value=0, required=False)
@@ -195,6 +182,42 @@ class YouTubeChannelForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         _apply_bootstrap_classes(self.fields)
+
+
+class MarketingSettingForm(forms.ModelForm):
+    class Meta:
+        model = MarketingSetting
+        fields = ["good_contract_cost", "cpv_good_max", "cpv_normal_max", "cpv_review_max"]
+        labels = {
+            "good_contract_cost": "가입당 비용 효율 좋음 기준",
+            "cpv_good_max": "조회당 비용 효율 좋음 기준",
+            "cpv_normal_max": "조회당 비용 보통 기준",
+            "cpv_review_max": "조회당 비용 단가 검토 기준",
+        }
+        help_texts = {
+            "good_contract_cost": "가입당 비용이 이 금액 이하이면 효율 좋은 캠페인으로 판단합니다.",
+            "cpv_good_max": "조회당 비용이 이 금액 이하이면 효율 좋음으로 표시합니다.",
+            "cpv_normal_max": "조회당 비용이 이 금액 이하이면 보통으로 표시합니다.",
+            "cpv_review_max": "조회당 비용이 이 금액 이하이면 단가 검토 필요로 표시합니다. 초과하면 비용 부담 높음입니다.",
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        _apply_bootstrap_classes(self.fields)
+
+    def clean(self):
+        cleaned_data = super().clean()
+        cpv_good_max = cleaned_data.get("cpv_good_max")
+        cpv_normal_max = cleaned_data.get("cpv_normal_max")
+        cpv_review_max = cleaned_data.get("cpv_review_max")
+        if (
+            cpv_good_max is not None
+            and cpv_normal_max is not None
+            and cpv_review_max is not None
+            and not (cpv_good_max <= cpv_normal_max <= cpv_review_max)
+        ):
+            raise forms.ValidationError("조회당 비용 기준은 효율 좋음, 보통, 단가 검토 순서로 커져야 합니다.")
+        return cleaned_data
 
 
 def _apply_bootstrap_classes(fields):

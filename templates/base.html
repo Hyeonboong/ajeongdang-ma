@@ -12,8 +12,7 @@
 <nav class="navbar navbar-expand-xl app-navbar sticky-top">
     <div class="container-fluid app-container">
         <a class="navbar-brand d-flex align-items-center" href="{% url 'marketing:dashboard' %}">
-            <span class="brand-mark">M</span>
-            Marketing ROI Dashboard
+            마케팅 자동화 프로젝트
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
@@ -22,10 +21,10 @@
             <ul class="navbar-nav ms-auto gap-1">
                 <li class="nav-item"><a class="nav-link" href="{% url 'marketing:dashboard' %}">대시보드</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'marketing:campaign_list' %}">캠페인</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'marketing:performance_upload' %}">CSV 업로드</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'marketing:youtube_channel_list' %}">유튜버 채널</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'marketing:youtube_analyze' %}">영상 성과 분석</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'marketing:youtube_channel_analyze' %}">단가 사전 분석</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'marketing:marketing_settings' %}">설정값 변경</a></li>
             </ul>
         </div>
     </div>

@@ -77,20 +77,26 @@
 <div class="dashboard-card">
     <h2 class="section-title">최근 영상 목록</h2>
     <div class="table-responsive">
-        <table class="table table-hover align-middle mb-0">
+        <table class="table table-hover align-middle mb-0 recent-video-table" style="min-width: 1080px;">
             <thead>
             <tr>
-                <th>업로드일</th>
-                <th>영상 제목</th>
-                <th class="text-end">조회수</th>
-                <th class="text-end">좋아요 수</th>
-                <th class="text-end">댓글 수</th>
+                <th class="date-column" style="white-space: nowrap; width: 112px; min-width: 112px;">업로드일</th>
+                <th class="video-title-column">영상 제목</th>
+                <th class="text-end view-column" style="white-space: nowrap; width: 90px; min-width: 90px;">조회수</th>
+                <th class="text-end count-column" style="white-space: nowrap; width: 72px; min-width: 72px;">좋아요수</th>
+                <th class="text-end count-column" style="white-space: nowrap; width: 72px; min-width: 72px;">댓글수</th>
             </tr>
             </thead>
             <tbody>
             {% for video in analysis.recent_videos.all %}
                 <tr>
-                    <td>{{ video.published_at|default:"-" }}</td>
+                    <td class="date-column" style="white-space: nowrap; width: 112px; min-width: 112px;">
+                        {% if video.published_at %}
+                            {{ video.published_at|date:"Y.m.d" }}
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
                     <td>{{ video.title }}</td>
                     <td class="text-end">{{ video.view_count|intcomma }}</td>
                     <td class="text-end">{{ video.like_count|intcomma }}</td>

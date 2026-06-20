@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block title %}설정값 변경 | Marketing ROI Dashboard{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div>
+        <div class="page-kicker">SETTINGS</div>
+        <h1 class="page-title">설정값 변경</h1>
+        <p class="page-subtitle">캠페인 효율 판단에 사용하는 기준 금액을 운영 상황에 맞게 조정합니다.</p>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-7">
+        <div class="form-card">
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {% if form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        {% for error in form.non_field_errors %}
+                            <div>{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <div class="form-section">
+                    <h2 class="form-section-title">1. 가입 전환 기준</h2>
+                    <div class="mb-3">
+                        <label class="form-label" for="{{ form.good_contract_cost.id_for_label }}">{{ form.good_contract_cost.label }}</label>
+                        <div class="input-group">
+                            {{ form.good_contract_cost }}
+                            <span class="input-group-text">원 이하</span>
+                        </div>
+                        <div class="amount-preview" id="contractCostPreview"></div>
+                        {% for error in form.good_contract_cost.errors %}
+                            <div class="text-danger small mt-1">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2 class="form-section-title">2. 조회당 비용 기준</h2>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label class="form-label" for="{{ form.cpv_good_max.id_for_label }}">{{ form.cpv_good_max.label }}</label>
+                            <div class="input-group">
+                                {{ form.cpv_good_max }}
+                                <span class="input-group-text">원 이하</span>
+                            </div>
+                            {% for error in form.cpv_good_max.errors %}
+                                <div class="text-danger small mt-1">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="{{ form.cpv_normal_max.id_for_label }}">{{ form.cpv_normal_max.label }}</label>
+                            <div class="input-group">
+                                {{ form.cpv_normal_max }}
+                                <span class="input-group-text">원 이하</span>
+                            </div>
+                            {% for error in form.cpv_normal_max.errors %}
+                                <div class="text-danger small mt-1">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="{{ form.cpv_review_max.id_for_label }}">{{ form.cpv_review_max.label }}</label>
+                            <div class="input-group">
+                                {{ form.cpv_review_max }}
+                                <span class="input-group-text">원 이하</span>
+                            </div>
+                            {% for error in form.cpv_review_max.errors %}
+                                <div class="text-danger small mt-1">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions settings-form-actions">
+                    <a class="btn btn-outline-secondary" href="{% url 'marketing:dashboard' %}">취소</a>
+                    <button class="btn btn-primary" type="submit">설정 저장</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-lg-5">
+        <div class="dashboard-card mb-4">
+            <h2 class="section-title">현재 가입 기준</h2>
+            <div class="setting-preview-number">{{ setting.good_contract_cost|intcomma }}원 이하</div>
+        </div>
+
+        <div class="dashboard-card">
+            <h2 class="section-title">현재 조회당 비용 기준</h2>
+            <div class="settings-rule-list">
+                <div class="settings-rule-item"><span>효율 좋음</span><strong>{{ setting.cpv_good_max|intcomma }}원 이하</strong></div>
+                <div class="settings-rule-item"><span>보통</span><strong>{{ setting.cpv_good_max|intcomma }}원 초과 ~ {{ setting.cpv_normal_max|intcomma }}원 이하</strong></div>
+                <div class="settings-rule-item"><span>단가 검토 필요</span><strong>{{ setting.cpv_normal_max|intcomma }}원 초과 ~ {{ setting.cpv_review_max|intcomma }}원 이하</strong></div>
+                <div class="settings-rule-item"><span>비용 부담 높음</span><strong>{{ setting.cpv_review_max|intcomma }}원 초과</strong></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const contractCostInput = document.getElementById("{{ form.good_contract_cost.id_for_label }}");
+    const contractCostPreview = document.getElementById("contractCostPreview");
+
+    function formatKoreanWon(value) {
+        const amount = Number(value || 0);
+        if (!amount) return "0원";
+
+        const eok = Math.floor(amount / 100000000);
+        const man = Math.floor((amount % 100000000) / 10000);
+        const parts = [];
+
+        if (eok) parts.push(`${eok}억`);
+        if (man) {
+            const cheon = Math.floor(man / 1000);
+            const baek = Math.floor((man % 1000) / 100);
+            const restMan = man % 100;
+
+            if (cheon) parts.push(`${cheon}천`);
+            if (baek) parts.push(`${baek}백`);
+            if (restMan) parts.push(`${restMan}만원`);
+            if (!restMan && (cheon || baek)) {
+                parts[parts.length - 1] = `${parts[parts.length - 1]}만원`;
+            } else if (cheon || baek) {
+                parts[parts.length - 1] = `${parts[parts.length - 1]}`;
+            }
+        }
+
+        return parts.length ? parts.join(" ") : `${amount.toLocaleString()}원`;
+    }
+
+    function updateContractCostPreview() {
+        contractCostPreview.textContent = formatKoreanWon(contractCostInput.value);
+    }
+
+    if (contractCostInput && contractCostPreview) {
+        contractCostInput.addEventListener("input", updateContractCostPreview);
+        updateContractCostPreview();
+    }
+</script>
+{% endblock %}

@@ -116,6 +116,26 @@ class Campaign(models.Model):
         return self.cost_per_contract
 
 
+class MarketingSetting(models.Model):
+    good_contract_cost = models.PositiveIntegerField(default=3000000)
+    cpv_good_max = models.PositiveIntegerField(default=30)
+    cpv_normal_max = models.PositiveIntegerField(default=50)
+    cpv_review_max = models.PositiveIntegerField(default=100)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Marketing Setting"
+        verbose_name_plural = "Marketing Settings"
+
+    def __str__(self):
+        return "Marketing efficiency settings"
+
+    @classmethod
+    def load(cls):
+        setting, _ = cls.objects.get_or_create(pk=1)
+        return setting
+
+
 class CampaignPerformance(models.Model):
     campaign = models.ForeignKey(Campaign, on_delete=models.CASCADE, related_name="performances")
     ad_copy = models.TextField(default="", blank=True)
@@ -232,6 +252,7 @@ class YouTubeChannel(models.Model):
     total_view_count = models.PositiveIntegerField(default=0)
     video_count = models.PositiveIntegerField(default=0)
     recent_video_count = models.PositiveIntegerField(default=0)
+    recent_latest_views = models.PositiveIntegerField(default=0)
     recent_avg_views = models.FloatField(default=0)
     recent_median_views = models.FloatField(default=0)
     recent_min_views = models.PositiveIntegerField(default=0)
@@ -253,6 +274,32 @@ class YouTubeChannel(models.Model):
     def save(self, *args, **kwargs):
         self.subscriber_view_rate = safe_divide(self.recent_avg_views, self.subscriber_count, 100)
         super().save(*args, **kwargs)
+
+    @property
+    def recent_latest_view_count(self):
+        if self.recent_latest_views:
+            return self.recent_latest_views
+        latest_video = self.recent_videos.order_by("-published_at", "-id").first()
+        if latest_video:
+            return latest_video.view_count
+        return None
+
+
+class YouTubeChannelRecentVideo(models.Model):
+    channel = models.ForeignKey(YouTubeChannel, on_delete=models.CASCADE, related_name="recent_videos")
+    video_id = models.CharField(max_length=50, default="", blank=True)
+    title = models.CharField(max_length=200, default="", blank=True)
+    view_count = models.PositiveIntegerField(default=0)
+    like_count = models.PositiveIntegerField(default=0)
+    comment_count = models.PositiveIntegerField(default=0)
+    published_at = models.DateField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-published_at", "-id"]
+
+    def __str__(self):
+        return self.title or self.video_id
 
 
 class YouTubeInfluencerAnalysis(models.Model):

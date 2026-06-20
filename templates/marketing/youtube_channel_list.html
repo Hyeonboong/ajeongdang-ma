@@ -28,7 +28,7 @@
 <div class="dashboard-card">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h2 class="section-title mb-0">저장된 채널</h2>
-        <span class="section-note">구독자 수와 최근 조회수 기준으로 협찬 후보를 비교합니다.</span>
+        <span class="section-note">구독자 수와 최근 10개 영상 조회수 기준으로 협찬 후보를 비교합니다.</span>
     </div>
     <div class="table-responsive">
         <table class="table table-hover align-middle mb-0">
@@ -37,8 +37,8 @@
                 <th>채널명</th>
                 <th>주요 콘텐츠</th>
                 <th class="text-end">구독자 수</th>
-                <th class="text-end">평균 조회수</th>
-                <th class="text-end">중앙값 조회수</th>
+                <th class="text-end">최근 10개 평균 조회수</th>
+                <th class="text-end">최근 10개 중앙값 조회수</th>
                 <th class="text-end">조회율</th>
                 <th class="text-center">관리</th>
             </tr>
@@ -57,7 +57,10 @@
                     <td class="text-end"><span class="badge-soft">{{ channel.subscriber_view_rate|floatformat:2 }}%</span></td>
                     <td class="text-center">
                         <div class="d-inline-flex gap-2">
-                            <button class="btn btn-sm btn-outline-secondary" type="button" disabled>동기화</button>
+                            <form class="d-inline" method="post" action="{% url 'marketing:youtube_channel_sync' channel.pk %}">
+                                {% csrf_token %}
+                                <button class="btn btn-sm btn-outline-secondary" type="submit">동기화</button>
+                            </form>
                             <a class="btn btn-sm btn-outline-primary" href="{% url 'marketing:youtube_channel_detail' channel.pk %}">상세</a>
                             <form class="d-inline" method="post" action="{% url 'marketing:youtube_channel_delete' channel.pk %}">
                                 {% csrf_token %}
@@ -67,7 +70,7 @@
                     </td>
                 </tr>
             {% empty %}
-                <tr><td colspan="7" class="text-center text-muted py-5">등록된 유튜버 채널이 없습니다.</td></tr>
+                <tr><td colspan="8" class="text-center text-muted py-5">등록된 유튜버 채널이 없습니다.</td></tr>
             {% endfor %}
             </tbody>
         </table>

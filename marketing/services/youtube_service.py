@@ -38,6 +38,7 @@ MOCK_CHANNEL_ANALYSIS_METRICS = {
     "video_count": 126,
     "uploads_playlist_id": "mock-uploads-playlist-id",
     "recent_video_count": 10,
+    "recent_latest_views": 980000,
     "recent_avg_views": 765000,
     "recent_median_views": 745000,
     "recent_min_views": 420000,
@@ -310,8 +311,12 @@ def get_channel_analysis_metrics(channel_url, limit=10):
     if not video_items:
         raise ValueError("YouTube API에서 최근 영상 통계를 찾을 수 없습니다.")
 
+    video_item_map = {item.get("id", ""): item for item in video_items}
     recent_videos = []
-    for item in video_items:
+    for video_id in video_ids:
+        item = video_item_map.get(video_id)
+        if not item:
+            continue
         item_snippet = item.get("snippet", {})
         item_statistics = item.get("statistics", {})
         recent_videos.append(
@@ -334,6 +339,7 @@ def get_channel_analysis_metrics(channel_url, limit=10):
         "video_count": _int_value(statistics.get("videoCount")),
         "uploads_playlist_id": uploads_playlist_id,
         "recent_video_count": len(recent_videos),
+        "recent_latest_views": recent_videos[0]["view_count"] if recent_videos else 0,
         "recent_avg_views": round(sum(view_counts) / len(view_counts), 2) if view_counts else 0,
         "recent_median_views": median(view_counts) if view_counts else 0,
         "recent_min_views": min(view_counts) if view_counts else 0,
