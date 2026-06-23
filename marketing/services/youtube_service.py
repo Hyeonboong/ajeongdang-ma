@@ -1,4 +1,5 @@
 import os
+import re
 from statistics import median
 from urllib.parse import parse_qs, urlparse
 
@@ -7,6 +8,8 @@ import requests
 
 YOUTUBE_API_BASE_URL = "https://www.googleapis.com/youtube/v3"
 REQUEST_TIMEOUT = 10
+SHORTS_MAX_DURATION_SECONDS = 180
+MAX_UPLOAD_PAGES = 5
 
 MOCK_VIDEO_METRICS = {
     "video_id": "mock-video-id",
@@ -193,38 +196,9 @@ def get_channel_recent_video_metrics(url, limit=10):
     if not uploads_playlist_id:
         raise ValueError("채널의 업로드 재생목록 ID를 찾을 수 없습니다.")
 
-    playlist_data = _youtube_get(
-        "playlistItems",
-        {
-            "part": "contentDetails",
-            "playlistId": uploads_playlist_id,
-            "maxResults": limit,
-            "key": api_key,
-        },
-    )
-    playlist_items = playlist_data.get("items", [])
-    if not playlist_items:
-        raise ValueError("YouTube API에서 최근 영상 목록을 찾을 수 없습니다.")
-
-    video_ids = [
-        item.get("contentDetails", {}).get("videoId")
-        for item in playlist_items
-        if item.get("contentDetails", {}).get("videoId")
-    ]
-    if not video_ids:
-        raise ValueError("최근 영상 ID 목록을 추출할 수 없습니다.")
-
-    recent_video_data = _youtube_get(
-        "videos",
-        {
-            "part": "statistics",
-            "id": ",".join(video_ids),
-            "key": api_key,
-        },
-    )
-    recent_items = recent_video_data.get("items", [])
+    recent_items = _get_recent_long_form_video_items(uploads_playlist_id, api_key, limit)
     if not recent_items:
-        raise ValueError("YouTube API에서 최근 영상 통계를 찾을 수 없습니다.")
+        raise ValueError("YouTube API에서 최근 일반 영상 통계를 찾을 수 없습니다.")
 
     view_counts = [_int_value(item.get("statistics", {}).get("viewCount")) for item in recent_items]
     video_metrics.update(
@@ -278,45 +252,12 @@ def get_channel_analysis_metrics(channel_url, limit=10):
     if not uploads_playlist_id:
         raise ValueError("채널의 업로드 재생목록 ID를 찾을 수 없습니다.")
 
-    playlist_data = _youtube_get(
-        "playlistItems",
-        {
-            "part": "contentDetails",
-            "playlistId": uploads_playlist_id,
-            "maxResults": limit,
-            "key": api_key,
-        },
-    )
-    playlist_items = playlist_data.get("items", [])
-    if not playlist_items:
-        raise ValueError("YouTube API에서 최근 영상 목록을 찾을 수 없습니다.")
-
-    video_ids = [
-        item.get("contentDetails", {}).get("videoId")
-        for item in playlist_items
-        if item.get("contentDetails", {}).get("videoId")
-    ]
-    if not video_ids:
-        raise ValueError("최근 영상 ID 목록을 추출할 수 없습니다.")
-
-    video_data = _youtube_get(
-        "videos",
-        {
-            "part": "snippet,statistics",
-            "id": ",".join(video_ids),
-            "key": api_key,
-        },
-    )
-    video_items = video_data.get("items", [])
+    video_items = _get_recent_long_form_video_items(uploads_playlist_id, api_key, limit)
     if not video_items:
-        raise ValueError("YouTube API에서 최근 영상 통계를 찾을 수 없습니다.")
+        raise ValueError("YouTube API에서 최근 일반 영상 통계를 찾을 수 없습니다.")
 
-    video_item_map = {item.get("id", ""): item for item in video_items}
     recent_videos = []
-    for video_id in video_ids:
-        item = video_item_map.get(video_id)
-        if not item:
-            continue
+    for item in video_items:
         item_snippet = item.get("snippet", {})
         item_statistics = item.get("statistics", {})
         recent_videos.append(
@@ -346,6 +287,66 @@ def get_channel_analysis_metrics(channel_url, limit=10):
         "recent_max_views": max(view_counts) if view_counts else 0,
         "recent_videos": recent_videos,
     }
+
+
+def _get_recent_long_form_video_items(uploads_playlist_id, api_key, limit):
+    long_form_items = []
+    page_token = ""
+
+    for _ in range(MAX_UPLOAD_PAGES):
+        playlist_params = {
+            "part": "contentDetails",
+            "playlistId": uploads_playlist_id,
+            "maxResults": 50,
+            "key": api_key,
+        }
+        if page_token:
+            playlist_params["pageToken"] = page_token
+
+        playlist_data = _youtube_get("playlistItems", playlist_params)
+        playlist_items = playlist_data.get("items", [])
+        video_ids = [
+            item.get("contentDetails", {}).get("videoId")
+            for item in playlist_items
+            if item.get("contentDetails", {}).get("videoId")
+        ]
+        if not video_ids:
+            break
+
+        video_data = _youtube_get(
+            "videos",
+            {
+                "part": "snippet,statistics,contentDetails",
+                "id": ",".join(video_ids),
+                "key": api_key,
+            },
+        )
+        video_item_map = {item.get("id", ""): item for item in video_data.get("items", [])}
+
+        for video_id in video_ids:
+            item = video_item_map.get(video_id)
+            if not item:
+                continue
+            duration = item.get("contentDetails", {}).get("duration", "")
+            if _iso8601_duration_seconds(duration) <= SHORTS_MAX_DURATION_SECONDS:
+                continue
+            long_form_items.append(item)
+            if len(long_form_items) >= limit:
+                return long_form_items
+
+        page_token = playlist_data.get("nextPageToken", "")
+        if not page_token:
+            break
+
+    return long_form_items
+
+
+def _iso8601_duration_seconds(value):
+    match = re.fullmatch(r"P(?:(\d+)D)?T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", value or "")
+    if not match:
+        return 0
+    days, hours, minutes, seconds = (int(part or 0) for part in match.groups())
+    return days * 86400 + hours * 3600 + minutes * 60 + seconds
 
 
 def _youtube_get(resource, params):
