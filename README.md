@@ -345,6 +345,14 @@ python manage.py runserver
 http://127.0.0.1:8000/
 ```
 
+## 데모 데이터 불러오기
+
+유튜버 채널, 캠페인, 영상 성과 분석, 단가 성과 분석 데모 데이터를 한 번에 불러올 수 있습니다.
+
+```bash
+python manage.py loaddata demo_data
+```
+
 ## YouTube API 설정 방법
 
 1. Google Cloud Console 접속

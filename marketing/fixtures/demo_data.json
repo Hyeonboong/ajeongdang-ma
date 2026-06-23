@@ -1,0 +1,3911 @@
+[
+{
+  "model": "marketing.campaign",
+  "pk": 1,
+  "fields": {
+    "name": "이민정 인터넷 PPL",
+    "objective": "",
+    "service_type": "인터넷",
+    "channel": "유튜브 협찬",
+    "ad_type": "PPL",
+    "status": "컨택예정",
+    "youtube_channel": 3,
+    "cost": 20000000,
+    "start_date": null,
+    "end_date": null,
+    "memo": "",
+    "created_at": "2026-06-23T12:45:34.325Z"
+  }
+},
+{
+  "model": "marketing.campaign",
+  "pk": 3,
+  "fields": {
+    "name": "침착맨 정수기 토크 PPL",
+    "objective": "브랜드 인지도",
+    "service_type": "정수기 렌탈",
+    "channel": "유튜브 협찬",
+    "ad_type": "PPL",
+    "status": "컨택중",
+    "youtube_channel": 6,
+    "cost": 15500000,
+    "start_date": "2026-07-01",
+    "end_date": "2026-07-31",
+    "memo": "침착맨 채널 협찬 캠페인. 최근 10개 영상 평균 조회수 기준 예상 CPV 18.19원.",
+    "created_at": "2026-06-23T13:07:47.595Z"
+  }
+},
+{
+  "model": "marketing.campaign",
+  "pk": 4,
+  "fields": {
+    "name": "이상호 게이밍 인터넷 협찬",
+    "objective": "브랜드 인지도",
+    "service_type": "인터넷",
+    "channel": "유튜브 협찬",
+    "ad_type": "라이브 방송 협찬",
+    "status": "완료",
+    "youtube_channel": 7,
+    "cost": 3500000,
+    "start_date": "2026-05-01",
+    "end_date": "2026-05-31",
+    "memo": "이상호 채널 협찬 캠페인. 최근 10개 영상 평균 조회수 기준 예상 CPV 22.61원.",
+    "created_at": "2026-06-23T13:07:47.599Z"
+  }
+},
+{
+  "model": "marketing.campaign",
+  "pk": 5,
+  "fields": {
+    "name": "강남 신혼가전 렌탈 캠페인",
+    "objective": "브랜드 인지도",
+    "service_type": "가전 렌탈",
+    "channel": "유튜브 협찬",
+    "ad_type": "브랜드 콘텐츠",
+    "status": "컨택예정",
+    "youtube_channel": 8,
+    "cost": 7500000,
+    "start_date": "2026-07-15",
+    "end_date": "2026-08-15",
+    "memo": "강남 채널 협찬 캠페인. 최근 10개 영상 평균 조회수 기준 예상 CPV 31.16원.",
+    "created_at": "2026-06-23T13:07:47.603Z"
+  }
+},
+{
+  "model": "marketing.campaign",
+  "pk": 6,
+  "fields": {
+    "name": "페이커 휴대폰 퍼포먼스 캠페인",
+    "objective": "브랜드 인지도",
+    "service_type": "휴대폰",
+    "channel": "유튜브 협찬",
+    "ad_type": "커뮤니티 게시글",
+    "status": "보류",
+    "youtube_channel": 9,
+    "cost": 14000000,
+    "start_date": "2026-06-01",
+    "end_date": "2026-07-01",
+    "memo": "페이커 채널 협찬 캠페인. 최근 10개 영상 평균 조회수 기준 예상 CPV 36.88원.",
+    "created_at": "2026-06-23T13:07:47.606Z"
+  }
+},
+{
+  "model": "marketing.campaign",
+  "pk": 7,
+  "fields": {
+    "name": "말왕 건강생활 정수기 협찬",
+    "objective": "브랜드 인지도",
+    "service_type": "정수기 렌탈",
+    "channel": "유튜브 협찬",
+    "ad_type": "쇼츠 협찬",
+    "status": "진행중",
+    "youtube_channel": 10,
+    "cost": 16000000,
+    "start_date": "2026-06-20",
+    "end_date": "2026-07-20",
+    "memo": "말왕 채널 협찬 캠페인. 최근 10개 영상 평균 조회수 기준 예상 CPV 43.39원.",
+    "created_at": "2026-06-23T13:07:47.609Z"
+  }
+},
+{
+  "model": "marketing.campaign",
+  "pk": 8,
+  "fields": {
+    "name": "매미킴 생활가전 챌린지",
+    "objective": "브랜드 인지도",
+    "service_type": "가전 렌탈",
+    "channel": "유튜브 협찬",
+    "ad_type": "쇼츠 협찬",
+    "status": "컨택실패",
+    "youtube_channel": 11,
+    "cost": 4500000,
+    "start_date": "2026-05-15",
+    "end_date": "2026-06-15",
+    "memo": "매미킴 채널 협찬 캠페인. 최근 10개 영상 평균 조회수 기준 예상 CPV 50.22원.",
+    "created_at": "2026-06-23T13:07:47.612Z"
+  }
+},
+{
+  "model": "marketing.campaign",
+  "pk": 9,
+  "fields": {
+    "name": "김진짜 축구 중계 인터넷 결합",
+    "objective": "브랜드 인지도",
+    "service_type": "인터넷+TV",
+    "channel": "유튜브 협찬",
+    "ad_type": "라이브 방송 협찬",
+    "status": "컨택중",
+    "youtube_channel": 12,
+    "cost": 78000000,
+    "start_date": "2026-07-05",
+    "end_date": "2026-08-05",
+    "memo": "김진짜 채널 협찬 캠페인. 최근 10개 영상 평균 조회수 기준 예상 CPV 53.98원.",
+    "created_at": "2026-06-23T13:07:47.615Z"
+  }
+},
+{
+  "model": "marketing.campaign",
+  "pk": 10,
+  "fields": {
+    "name": "너덜트 이사 코믹 숏무비",
+    "objective": "",
+    "service_type": "이사",
+    "channel": "유튜브 협찬",
+    "ad_type": "브랜디드 콘텐츠",
+    "status": "완료",
+    "youtube_channel": 13,
+    "cost": 89000000,
+    "start_date": "2026-04-20",
+    "end_date": "2026-05-20",
+    "memo": "너덜트 채널 협찬 캠페인. 최근 10개 영상 평균 조회수 기준 예상 CPV 58.85원.",
+    "created_at": "2026-06-23T13:07:47.618Z"
+  }
+},
+{
+  "model": "marketing.campaign",
+  "pk": 11,
+  "fields": {
+    "name": "기안84 라이프스타일 브랜디드 캠페인",
+    "objective": "",
+    "service_type": "기타",
+    "channel": "유튜브 협찬",
+    "ad_type": "브랜디드 콘텐츠",
+    "status": "컨택예정",
+    "youtube_channel": 14,
+    "cost": 15500000,
+    "start_date": "2026-08-01",
+    "end_date": "2026-08-31",
+    "memo": "기안84 채널 협찬 캠페인. 최근 10개 영상 평균 조회수 기준 예상 CPV 65.99원.",
+    "created_at": "2026-06-23T13:07:47.621Z"
+  }
+},
+{
+  "model": "marketing.marketingsetting",
+  "pk": 1,
+  "fields": {
+    "good_contract_cost": 3000000,
+    "cpv_good_max": 30,
+    "cpv_normal_max": 50,
+    "cpv_review_max": 100,
+    "updated_at": "2026-06-23T12:32:58.897Z"
+  }
+},
+{
+  "model": "marketing.youtubechannel",
+  "pk": 3,
+  "fields": {
+    "channel_url": "https://www.youtube.com/@Rheeminjung_MJ/videos",
+    "channel_id": "UCFNUGAiaGRgzVCXrjVoe1Hw",
+    "channel_name": "이민정 MJ",
+    "main_content": "연예인 토크",
+    "subscriber_count": 543000,
+    "total_view_count": 365026409,
+    "video_count": 436,
+    "recent_video_count": 10,
+    "recent_latest_views": 17264,
+    "recent_avg_views": 383088.8,
+    "recent_median_views": 397038.5,
+    "recent_min_views": 17264,
+    "recent_max_views": 890342,
+    "recent_avg_likes": 5127.4,
+    "recent_avg_comments": 387.3,
+    "subscriber_view_rate": 70.55,
+    "created_at": "2026-06-23T12:40:08.620Z",
+    "updated_at": "2026-06-23T13:18:40.605Z"
+  }
+},
+{
+  "model": "marketing.youtubechannel",
+  "pk": 4,
+  "fields": {
+    "channel_url": "https://www.youtube.com/@samdaejang_official",
+    "channel_id": "UCa56qkMvVvq1IMn4xbXaKEA",
+    "channel_name": "삼대장 Samdaejang",
+    "main_content": "먹방",
+    "subscriber_count": 1040000,
+    "total_view_count": 878791686,
+    "video_count": 2119,
+    "recent_video_count": 10,
+    "recent_latest_views": 101998,
+    "recent_avg_views": 134726.3,
+    "recent_median_views": 132433.0,
+    "recent_min_views": 101869,
+    "recent_max_views": 180780,
+    "recent_avg_likes": 2630.9,
+    "recent_avg_comments": 497.4,
+    "subscriber_view_rate": 12.95,
+    "created_at": "2026-06-23T12:43:31.003Z",
+    "updated_at": "2026-06-23T13:18:41.838Z"
+  }
+},
+{
+  "model": "marketing.youtubechannel",
+  "pk": 5,
+  "fields": {
+    "channel_url": "https://www.youtube.com/@아정당",
+    "channel_id": "UCV77qil5hUvWrMGgWaZa5Tw",
+    "channel_name": "아정당",
+    "main_content": "인터넷 가입",
+    "subscriber_count": 347000,
+    "total_view_count": 223016067,
+    "video_count": 4087,
+    "recent_video_count": 10,
+    "recent_latest_views": 11635,
+    "recent_avg_views": 62200.9,
+    "recent_median_views": 15844.0,
+    "recent_min_views": 1424,
+    "recent_max_views": 342752,
+    "recent_avg_likes": 590.1,
+    "recent_avg_comments": 59.4,
+    "subscriber_view_rate": 17.93,
+    "created_at": "2026-06-23T12:57:58.664Z",
+    "updated_at": "2026-06-23T13:18:43.170Z"
+  }
+},
+{
+  "model": "marketing.youtubechannel",
+  "pk": 6,
+  "fields": {
+    "channel_url": "https://www.youtube.com/@ChimChakMan_Official",
+    "channel_id": "UCUj6rrhMTR9pipbAWBAMvUQ",
+    "channel_name": "침착맨",
+    "main_content": "토크",
+    "subscriber_count": 3170000,
+    "total_view_count": 5725520877,
+    "video_count": 7566,
+    "recent_video_count": 10,
+    "recent_latest_views": 83860,
+    "recent_avg_views": 761800.3,
+    "recent_median_views": 593059.5,
+    "recent_min_views": 83860,
+    "recent_max_views": 2426674,
+    "recent_avg_likes": 9570.9,
+    "recent_avg_comments": 811.1,
+    "subscriber_view_rate": 24.03,
+    "created_at": "2026-06-23T12:57:58.684Z",
+    "updated_at": "2026-06-23T13:18:45.755Z"
+  }
+},
+{
+  "model": "marketing.youtubechannel",
+  "pk": 7,
+  "fields": {
+    "channel_url": "https://www.youtube.com/@LeeSangHoTV",
+    "channel_id": "UCfIUuMA7U_jImP7oWfTe4Pw",
+    "channel_name": "이상호",
+    "main_content": "게임",
+    "subscriber_count": 974000,
+    "total_view_count": 772972811,
+    "video_count": 2574,
+    "recent_video_count": 10,
+    "recent_latest_views": 106703,
+    "recent_avg_views": 226805.3,
+    "recent_median_views": 206670.0,
+    "recent_min_views": 106703,
+    "recent_max_views": 431865,
+    "recent_avg_likes": 1095.3,
+    "recent_avg_comments": 106.7,
+    "subscriber_view_rate": 23.29,
+    "created_at": "2026-06-23T12:57:58.696Z",
+    "updated_at": "2026-06-23T13:18:47.508Z"
+  }
+},
+{
+  "model": "marketing.youtubechannel",
+  "pk": 8,
+  "fields": {
+    "channel_url": "https://www.youtube.com/@sanghwahusband",
+    "channel_id": "UCrAhzG4rf642oTUCpdyo5Vw",
+    "channel_name": "강남",
+    "main_content": "연예인 토크",
+    "subscriber_count": 1490000,
+    "total_view_count": 909573133,
+    "video_count": 973,
+    "recent_video_count": 10,
+    "recent_latest_views": 1203323,
+    "recent_avg_views": 797256.7,
+    "recent_median_views": 609743.5,
+    "recent_min_views": 391879,
+    "recent_max_views": 1740984,
+    "recent_avg_likes": 10969.1,
+    "recent_avg_comments": 727.3,
+    "subscriber_view_rate": 53.51,
+    "created_at": "2026-06-23T12:57:58.705Z",
+    "updated_at": "2026-06-23T13:18:49.908Z"
+  }
+},
+{
+  "model": "marketing.youtubechannel",
+  "pk": 9,
+  "fields": {
+    "channel_url": "https://www.youtube.com/@T1_Faker",
+    "channel_id": "UCpJw2H9KKqwCCGQKRh1Bf2w",
+    "channel_name": "페이커",
+    "main_content": "프로게이머",
+    "subscriber_count": 2120000,
+    "total_view_count": 460309616,
+    "video_count": 1459,
+    "recent_video_count": 10,
+    "recent_latest_views": 435525,
+    "recent_avg_views": 379642.6,
+    "recent_median_views": 345841.0,
+    "recent_min_views": 196954,
+    "recent_max_views": 730812,
+    "recent_avg_likes": 7764.7,
+    "recent_avg_comments": 274.5,
+    "subscriber_view_rate": 17.91,
+    "created_at": "2026-06-23T12:57:58.715Z",
+    "updated_at": "2026-06-23T13:18:51.488Z"
+  }
+},
+{
+  "model": "marketing.youtubechannel",
+  "pk": 10,
+  "fields": {
+    "channel_url": "https://www.youtube.com/@MrRagoona88",
+    "channel_id": "UCYJDUekoQz0-bo8al1diLWQ",
+    "channel_name": "말왕",
+    "main_content": "운동,토크",
+    "subscriber_count": 1820000,
+    "total_view_count": 1211005810,
+    "video_count": 1661,
+    "recent_video_count": 10,
+    "recent_latest_views": 82743,
+    "recent_avg_views": 325663.7,
+    "recent_median_views": 325976.5,
+    "recent_min_views": 82743,
+    "recent_max_views": 549313,
+    "recent_avg_likes": 5033.5,
+    "recent_avg_comments": 641.0,
+    "subscriber_view_rate": 17.89,
+    "created_at": "2026-06-23T12:57:58.727Z",
+    "updated_at": "2026-06-23T13:18:53.078Z"
+  }
+},
+{
+  "model": "marketing.youtubechannel",
+  "pk": 11,
+  "fields": {
+    "channel_url": "https://www.youtube.com/@stungunTV",
+    "channel_id": "UCXVhGNDrOfVUYEvuRdM0OXA",
+    "channel_name": "매미킴",
+    "main_content": "UFC 격투가",
+    "subscriber_count": 1200000,
+    "total_view_count": 745181984,
+    "video_count": 1657,
+    "recent_video_count": 10,
+    "recent_latest_views": 204153,
+    "recent_avg_views": 346703.0,
+    "recent_median_views": 347816.5,
+    "recent_min_views": 176096,
+    "recent_max_views": 515955,
+    "recent_avg_likes": 5215.4,
+    "recent_avg_comments": 1085.1,
+    "subscriber_view_rate": 28.89,
+    "created_at": "2026-06-23T12:57:58.736Z",
+    "updated_at": "2026-06-23T13:18:54.384Z"
+  }
+},
+{
+  "model": "marketing.youtubechannel",
+  "pk": 12,
+  "fields": {
+    "channel_url": "https://www.youtube.com/@realkim10",
+    "channel_id": "UChb4gtsgSdwMDktdLukfrfw",
+    "channel_name": "김진짜",
+    "main_content": "축구컨텐츠",
+    "subscriber_count": 1050000,
+    "total_view_count": 334173032,
+    "video_count": 685,
+    "recent_video_count": 10,
+    "recent_latest_views": 334885,
+    "recent_avg_views": 296129.1,
+    "recent_median_views": 287713.5,
+    "recent_min_views": 41596,
+    "recent_max_views": 519165,
+    "recent_avg_likes": 4556.1,
+    "recent_avg_comments": 1330.2,
+    "subscriber_view_rate": 28.2,
+    "created_at": "2026-06-23T12:57:58.748Z",
+    "updated_at": "2026-06-23T13:18:55.579Z"
+  }
+},
+{
+  "model": "marketing.youtubechannel",
+  "pk": 13,
+  "fields": {
+    "channel_url": "https://www.youtube.com/@NERDULT",
+    "channel_id": "UCXEKwWflysXu312NmIP_dlw",
+    "channel_name": "너덜트",
+    "main_content": "코믹숏무비",
+    "subscriber_count": 2210000,
+    "total_view_count": 624724343,
+    "video_count": 211,
+    "recent_video_count": 10,
+    "recent_latest_views": 1046901,
+    "recent_avg_views": 1128497.1,
+    "recent_median_views": 1005155.0,
+    "recent_min_views": 396213,
+    "recent_max_views": 2163974,
+    "recent_avg_likes": 14741.0,
+    "recent_avg_comments": 1159.8,
+    "subscriber_view_rate": 51.06,
+    "created_at": "2026-06-23T12:57:58.760Z",
+    "updated_at": "2026-06-23T13:18:56.890Z"
+  }
+},
+{
+  "model": "marketing.youtubechannel",
+  "pk": 14,
+  "fields": {
+    "channel_url": "https://www.youtube.com/@geean84",
+    "channel_id": "UC1Rz7a_DWtsE9cQwSyElE0Q",
+    "channel_name": "기안84",
+    "main_content": "연예인 토크",
+    "subscriber_count": 1660000,
+    "total_view_count": 366868722,
+    "video_count": 469,
+    "recent_video_count": 10,
+    "recent_latest_views": 90260,
+    "recent_avg_views": 965119.6,
+    "recent_median_views": 948317.0,
+    "recent_min_views": 90260,
+    "recent_max_views": 1644504,
+    "recent_avg_likes": 17857.8,
+    "recent_avg_comments": 1747.7,
+    "subscriber_view_rate": 58.14,
+    "created_at": "2026-06-23T12:57:58.769Z",
+    "updated_at": "2026-06-23T13:18:58.293Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 146,
+  "fields": {
+    "channel": 3,
+    "video_id": "EkqSyhxmNoY",
+    "title": "20년 만에 다시 찾은 로마. 이민정 인생 첫 해방여행 (준후야 서이야 남편아 고마워)",
+    "view_count": 17264,
+    "like_count": 715,
+    "comment_count": 93,
+    "published_at": "2026-06-23",
+    "created_at": "2026-06-23T13:18:40.614Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 147,
+  "fields": {
+    "channel": 3,
+    "video_id": "aEz8W7QdIfk",
+    "title": "엄마 이태리 갔다 온다. 이민정이 준비한 최후의 만찬 *울지 말고 치즈 먹어",
+    "view_count": 123561,
+    "like_count": 1603,
+    "comment_count": 125,
+    "published_at": "2026-06-16",
+    "created_at": "2026-06-23T13:18:40.614Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 148,
+  "fields": {
+    "channel": 3,
+    "video_id": "hM5qBUkY2hA",
+    "title": "학부모 이민정, 아들과 농구 레전드 전태풍에게 레벨테스트 받으러 가다",
+    "view_count": 655096,
+    "like_count": 5481,
+    "comment_count": 507,
+    "published_at": "2026-06-09",
+    "created_at": "2026-06-23T13:18:40.614Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 149,
+  "fields": {
+    "channel": 3,
+    "video_id": "7LjulWDc3B8",
+    "title": "다시 놀러온 내친구 제성이 제성이~🌼 순천 싸움꾼이 전교 10등이 되기까지. *황제성 인생 설명회",
+    "view_count": 485258,
+    "like_count": 6654,
+    "comment_count": 521,
+    "published_at": "2026-06-02",
+    "created_at": "2026-06-23T13:18:40.614Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 150,
+  "fields": {
+    "channel": 3,
+    "video_id": "8ySxu5d5R3c",
+    "title": "여자들끼리만 떠나요~ 제주도에 놀러간 이민정네 세 모녀 *3대가 함께하는 딸 육아현장",
+    "view_count": 174988,
+    "like_count": 2397,
+    "comment_count": 125,
+    "published_at": "2026-05-26",
+    "created_at": "2026-06-23T13:18:40.615Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 151,
+  "fields": {
+    "channel": 3,
+    "video_id": "Pje9HLFqas8",
+    "title": "춤 알려주러 왔다가 이민정한테 찜 쪄지고 간 비 *전남편시리즈 2탄",
+    "view_count": 602081,
+    "like_count": 7121,
+    "comment_count": 399,
+    "published_at": "2026-05-19",
+    "created_at": "2026-06-23T13:18:40.615Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 152,
+  "fields": {
+    "channel": 3,
+    "video_id": "7MwDNGq68aI",
+    "title": "애들없이 나홀로 유럽 여행 떠나는 이민정 ”저 뭐 입고 갈까요?“",
+    "view_count": 88221,
+    "like_count": 1718,
+    "comment_count": 334,
+    "published_at": "2026-05-12",
+    "created_at": "2026-06-23T13:18:40.615Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 153,
+  "fields": {
+    "channel": 3,
+    "video_id": "Cy9qdAPE1h0",
+    "title": "\"할거면 제대로 해.\" 찐 현지 갸루걸이 된 이민정 (with 시네)",
+    "view_count": 415891,
+    "like_count": 5319,
+    "comment_count": 595,
+    "published_at": "2026-05-06",
+    "created_at": "2026-06-23T13:18:40.615Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 154,
+  "fields": {
+    "channel": 3,
+    "video_id": "TpSsIg_1rYk",
+    "title": "일본에서 뵨사마를 만나다..! (촬영: 이민정)",
+    "view_count": 890342,
+    "like_count": 15093,
+    "comment_count": 894,
+    "published_at": "2026-04-30",
+    "created_at": "2026-06-23T13:18:40.615Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 155,
+  "fields": {
+    "channel": 3,
+    "video_id": "ZGyLlAG8F88",
+    "title": "소소한데 재밌는 이민정네 집 주말 풍경 공개 *MJ 딸 이만큼 컸어요~!",
+    "view_count": 378186,
+    "like_count": 5173,
+    "comment_count": 280,
+    "published_at": "2026-04-24",
+    "created_at": "2026-06-23T13:18:40.615Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 156,
+  "fields": {
+    "channel": 4,
+    "video_id": "On4oPxY0Q40",
+    "title": "한강물 위에서 구워먹는 진귀한 삼겹살. 근데 한돈이 5,000원?!",
+    "view_count": 101998,
+    "like_count": 1824,
+    "comment_count": 314,
+    "published_at": "2026-06-21",
+    "created_at": "2026-06-23T13:18:41.845Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 157,
+  "fields": {
+    "channel": 4,
+    "video_id": "rYE2Ry1Zl_0",
+    "title": "[10주년 기념] 결국 여기까지 왔습니다. 10년치 음식 한 번에 먹습니다.",
+    "view_count": 154161,
+    "like_count": 4581,
+    "comment_count": 832,
+    "published_at": "2026-06-20",
+    "created_at": "2026-06-23T13:18:41.846Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 158,
+  "fields": {
+    "channel": 4,
+    "video_id": "ik8IfFX7dgo",
+    "title": "ㅈ망확률 대폭 상승☠️ 메뉴 5개가 다섯 개ㅋㅋ 지옥의 하드모드 도전합니다. - 운빨ㅈ망먹방 - ep.60",
+    "view_count": 132003,
+    "like_count": 2160,
+    "comment_count": 457,
+    "published_at": "2026-06-19",
+    "created_at": "2026-06-23T13:18:41.846Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 159,
+  "fields": {
+    "channel": 4,
+    "video_id": "croITrMYZkg",
+    "title": "한국 vs 멕시코 월드컵 승리 기원🇰🇷 멕시코 음식 10,000kcal 탈탈 털어버리기",
+    "view_count": 101869,
+    "like_count": 2021,
+    "comment_count": 317,
+    "published_at": "2026-06-17",
+    "created_at": "2026-06-23T13:18:41.846Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 160,
+  "fields": {
+    "channel": 4,
+    "video_id": "tqgyPrRUkyA",
+    "title": "요즘 제일 핫한 무한리필 뷔페 고메스퀘어, 비싼 값 할까요??? 직접 먹어봅니다.",
+    "view_count": 140003,
+    "like_count": 2071,
+    "comment_count": 387,
+    "published_at": "2026-06-14",
+    "created_at": "2026-06-23T13:18:41.846Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 161,
+  "fields": {
+    "channel": 4,
+    "video_id": "sR1MB4XUrQM",
+    "title": "리뷰는 개맛있다더니 왜 이모양이죠??? 이래서 리뷰만 보고 시키면 안 됩니다. - 리뷰게임 2",
+    "view_count": 111250,
+    "like_count": 2187,
+    "comment_count": 394,
+    "published_at": "2026-06-13",
+    "created_at": "2026-06-23T13:18:41.846Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 162,
+  "fields": {
+    "channel": 4,
+    "video_id": "YHCzN5mHYUM",
+    "title": "참기름 원샷 때리던 그때로 돌아갑니다. 우리형 10,000kcal 챌린지 미러전",
+    "view_count": 180780,
+    "like_count": 3484,
+    "comment_count": 697,
+    "published_at": "2026-06-12",
+    "created_at": "2026-06-23T13:18:41.846Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 163,
+  "fields": {
+    "channel": 4,
+    "video_id": "kAGraxPbi4c",
+    "title": "산처럼 쌓인 짐덩이들 이쯤에서 털고 가야될 것 같네요. 26년 상반기를 돌아보며 재고 먹방",
+    "view_count": 165497,
+    "like_count": 2319,
+    "comment_count": 420,
+    "published_at": "2026-06-10",
+    "created_at": "2026-06-23T13:18:41.846Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 164,
+  "fields": {
+    "channel": 4,
+    "video_id": "e4o_UKYuowU",
+    "title": "제발 그만 봐주시면 안 될까요?🥹 폭우 속에서 죽다 살아났습니다...💦",
+    "view_count": 126839,
+    "like_count": 3794,
+    "comment_count": 559,
+    "published_at": "2026-06-07",
+    "created_at": "2026-06-23T13:18:41.847Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 165,
+  "fields": {
+    "channel": 4,
+    "video_id": "TtDWYtvxnbI",
+    "title": "맘스터치 핫치즈밤순살맥스 + 밥 한공기 치밥세트 혼자서 가능? 불가능?",
+    "view_count": 132863,
+    "like_count": 1868,
+    "comment_count": 597,
+    "published_at": "2026-06-06",
+    "created_at": "2026-06-23T13:18:41.847Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 166,
+  "fields": {
+    "channel": 5,
+    "video_id": "2XhJ5cwS-lY",
+    "title": "청년미래적금 이거 안 보고 만들면 무조건 후회합니다! 청년도약계좌 비교, 금리, 신청 방법 등 최신 정보 총정리",
+    "view_count": 11635,
+    "like_count": 143,
+    "comment_count": 24,
+    "published_at": "2026-06-22",
+    "created_at": "2026-06-23T13:18:43.179Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 167,
+  "fields": {
+    "channel": 5,
+    "video_id": "AdktFhgrDlA",
+    "title": "2026 내일배움카드 혜택 A to Z! 정부지원금 빨리 받아가세요 (국비지원 신청 방법, 사용처 등)",
+    "view_count": 3262,
+    "like_count": 71,
+    "comment_count": 3,
+    "published_at": "2026-06-21",
+    "created_at": "2026-06-23T13:18:43.179Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 168,
+  "fields": {
+    "channel": 5,
+    "video_id": "sNTryYhlcjE",
+    "title": "26년 최신 코웨이 냉온정수기 무료로 쓰세요! 모르고 사면 무조건 후회하는 숨겨진 단점까지 알려드릴게요(렌탈 vs 구매 비교 추천, 직수 얼음 아이콘, 필터 종류, 현금 사은품)",
+    "view_count": 3253,
+    "like_count": 70,
+    "comment_count": 7,
+    "published_at": "2026-06-20",
+    "created_at": "2026-06-23T13:18:43.179Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 169,
+  "fields": {
+    "channel": 5,
+    "video_id": "6H8h72y9iwo",
+    "title": "26년 6월 3차 알뜰폰 특가 요금제! 비싸지기 전에 빨리 갈아타세요! (KT SKT LG 아이즈 티플러스 프리티 모나 이야기 핀다이렉트 이지 슈가 인스 에이 유모바일 아정당)",
+    "view_count": 20053,
+    "like_count": 275,
+    "comment_count": 23,
+    "published_at": "2026-06-18",
+    "created_at": "2026-06-23T13:18:43.179Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 170,
+  "fields": {
+    "channel": 5,
+    "video_id": "dekXM24SfF0",
+    "title": "에어컨 청소, 절대 업체 부르지 마세요! 따라만 하면 누구나 10분만에 가능합니다! (스탠드 삼성 무풍 LG 휘센 위니아 캐리어 곰팡이 필터 세척 비용 셀프 방법)",
+    "view_count": 137856,
+    "like_count": 1342,
+    "comment_count": 100,
+    "published_at": "2026-06-17",
+    "created_at": "2026-06-23T13:18:43.179Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 171,
+  "fields": {
+    "channel": 5,
+    "video_id": "p9EexIR8y0A",
+    "title": "갤럭시 One UI 9.0 업데이트, 현시점 난리난 이유 6가지! 이건 알고 쓰세요!(베타 설정 디자인 잠금화면 배터리 비교)",
+    "view_count": 342752,
+    "like_count": 2694,
+    "comment_count": 188,
+    "published_at": "2026-06-16",
+    "created_at": "2026-06-23T13:18:43.179Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 172,
+  "fields": {
+    "channel": 5,
+    "video_id": "LCJyOHdyaZg",
+    "title": "에어컨 청소 초보자도 무조건 가능! 이 방법만 알면 10분만에 할 수 있어요! (벽걸이, LG, 삼성, 위니아, 휘센, 캐리어, 무풍)",
+    "view_count": 32271,
+    "like_count": 749,
+    "comment_count": 85,
+    "published_at": "2026-06-14",
+    "created_at": "2026-06-23T13:18:43.179Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 173,
+  "fields": {
+    "channel": 5,
+    "video_id": "ZRjddQWsK_s",
+    "title": "현시점 싹 바뀐 갤럭시 Z 폴드8 최신 유출 루머 총정리! 지금 폴드7 사는 게 이득인 이유 (와이드 디스플레이 디자인 주름 s펜 사전예약 카메라 udc 출시일 가격 예상)",
+    "view_count": 65812,
+    "like_count": 431,
+    "comment_count": 144,
+    "published_at": "2026-06-13",
+    "created_at": "2026-06-23T13:18:43.179Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 174,
+  "fields": {
+    "channel": 5,
+    "video_id": "h7ebES4Wuyk",
+    "title": "정수기 냉수 고장 해결법! 기사님도 이렇게 고칩니다! 30초면 끝! (코웨이, SK, LG, 삼성, 쿠쿠, 청호, 교원 웰스 냉수 안나옴, 고장, 셀프 수리, 필터)",
+    "view_count": 1424,
+    "like_count": 50,
+    "comment_count": 13,
+    "published_at": "2026-06-11",
+    "created_at": "2026-06-23T13:18:43.179Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 175,
+  "fields": {
+    "channel": 5,
+    "video_id": "EpkjZt1kKW0",
+    "title": "현시점 가장 저렴한 인터넷 알뜰통신사 HCN! 욕먹을 각오로 장단점 전부 알려드릴게요! (KT, 가성비 인터넷티비 가입 속도 TV 화질, 결합, 무약정, 충북 부산 금호방송)",
+    "view_count": 3691,
+    "like_count": 76,
+    "comment_count": 7,
+    "published_at": "2026-06-10",
+    "created_at": "2026-06-23T13:18:43.179Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 176,
+  "fields": {
+    "channel": 6,
+    "video_id": "cuxG-Ps6J4Y",
+    "title": "술 한잔 했습니다 (with 은하, 맛피자, 카라미)",
+    "view_count": 83860,
+    "like_count": 2510,
+    "comment_count": 444,
+    "published_at": "2026-06-23",
+    "created_at": "2026-06-23T13:18:45.759Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 177,
+  "fields": {
+    "channel": 6,
+    "video_id": "JV6Topsze2o",
+    "title": "100년 전통 그룹 다비치의 강민경 님이 추천한 김밥",
+    "view_count": 362898,
+    "like_count": 3720,
+    "comment_count": 437,
+    "published_at": "2026-06-22",
+    "created_at": "2026-06-23T13:18:45.759Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 178,
+  "fields": {
+    "channel": 6,
+    "video_id": "5Nj7PB4HmfM",
+    "title": "리뷰 유튜버들의 전략과 고충",
+    "view_count": 230529,
+    "like_count": 2911,
+    "comment_count": 282,
+    "published_at": "2026-06-21",
+    "created_at": "2026-06-23T13:18:45.759Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 179,
+  "fields": {
+    "channel": 6,
+    "video_id": "re5l6zWCPfs",
+    "title": "충격적인 비주얼의 롯데리아 신메뉴",
+    "view_count": 764652,
+    "like_count": 6224,
+    "comment_count": 616,
+    "published_at": "2026-06-18",
+    "created_at": "2026-06-23T13:18:45.759Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 180,
+  "fields": {
+    "channel": 6,
+    "video_id": "Ty-CTEIGpJE",
+    "title": "억울한 김기열과 젠슨황 정식 먹방",
+    "view_count": 353966,
+    "like_count": 3552,
+    "comment_count": 310,
+    "published_at": "2026-06-17",
+    "created_at": "2026-06-23T13:18:45.759Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 181,
+  "fields": {
+    "channel": 6,
+    "video_id": "DG4us_SKI-I",
+    "title": "휴가 중에 있었던 일들",
+    "view_count": 523509,
+    "like_count": 4864,
+    "comment_count": 240,
+    "published_at": "2026-06-16",
+    "created_at": "2026-06-23T13:18:45.759Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 182,
+  "fields": {
+    "channel": 6,
+    "video_id": "YY0hAt4QT6g",
+    "title": "시청자 비밀 레시피 먹어보기",
+    "view_count": 662610,
+    "like_count": 5706,
+    "comment_count": 474,
+    "published_at": "2026-06-15",
+    "created_at": "2026-06-23T13:18:45.759Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 183,
+  "fields": {
+    "channel": 6,
+    "video_id": "z9pVFFikowI",
+    "title": "지방인이 무조건 긁히는 순간 월드컵 (with 리센느 원이 & 미나미)",
+    "view_count": 1384272,
+    "like_count": 17106,
+    "comment_count": 1442,
+    "published_at": "2026-06-14",
+    "created_at": "2026-06-23T13:18:45.759Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 184,
+  "fields": {
+    "channel": 6,
+    "video_id": "wbfy9Tm0UjA",
+    "title": "리센느 원이 & 미나미 초대석",
+    "view_count": 2426674,
+    "like_count": 40785,
+    "comment_count": 3088,
+    "published_at": "2026-06-11",
+    "created_at": "2026-06-23T13:18:45.759Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 185,
+  "fields": {
+    "channel": 6,
+    "video_id": "RcU-7lx8EDU",
+    "title": "시간 여행은 물리학적으로 가능할까?",
+    "view_count": 825033,
+    "like_count": 8331,
+    "comment_count": 778,
+    "published_at": "2026-06-10",
+    "created_at": "2026-06-23T13:18:45.759Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 186,
+  "fields": {
+    "channel": 7,
+    "video_id": "037-lnkkOXU",
+    "title": "\"결승까지 단 한 걸음\" 시청자 모두가 놀란 최약체팀의 유쾌한 반란..!",
+    "view_count": 106703,
+    "like_count": 519,
+    "comment_count": 39,
+    "published_at": "2026-06-22",
+    "created_at": "2026-06-23T13:18:47.515Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 187,
+  "fields": {
+    "channel": 7,
+    "video_id": "sjpW_C4LDzA",
+    "title": "\"아 지금 이상호 노스마에요!\" 중간계 광탈 위기의 순간.. 과연 이상호 팀의 운명은?!",
+    "view_count": 169046,
+    "like_count": 724,
+    "comment_count": 64,
+    "published_at": "2026-06-20",
+    "created_at": "2026-06-23T13:18:47.515Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 188,
+  "fields": {
+    "channel": 7,
+    "video_id": "PtWAB4erQ0c",
+    "title": "\"4강 진출 희망이 보인다..!\" 예선전 광탈을 피하기 위한 최종 점검에 나선 이상호팀!",
+    "view_count": 113937,
+    "like_count": 552,
+    "comment_count": 48,
+    "published_at": "2026-06-20",
+    "created_at": "2026-06-23T13:18:47.515Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 189,
+  "fields": {
+    "channel": 7,
+    "video_id": "54wglXdD_Ww",
+    "title": "\"내가 한 게 없다고..?\" 무너진 정글의 교권에 오열하는 가짜 정글러 이상호..!【중간계 시즌2 Ep.3】",
+    "view_count": 197821,
+    "like_count": 789,
+    "comment_count": 105,
+    "published_at": "2026-06-18",
+    "created_at": "2026-06-23T13:18:47.515Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 190,
+  "fields": {
+    "channel": 7,
+    "video_id": "8_mI87B10P0",
+    "title": "\"3도구 + 3유찰팀\" 모두가 최약체라고 예상했던 팀인데 생각보다 강팀이다..?!【중간계 시즌2 Ep.2】",
+    "view_count": 187594,
+    "like_count": 871,
+    "comment_count": 88,
+    "published_at": "2026-06-17",
+    "created_at": "2026-06-23T13:18:47.516Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 191,
+  "fields": {
+    "channel": 7,
+    "video_id": "uHT-vKBFpOg",
+    "title": "중간계 대망의 경매 시작! 과연 이상호는 이번에 어떤 감독에게 갈까?【중간계 시즌2 Ep.1】",
+    "view_count": 215519,
+    "like_count": 1162,
+    "comment_count": 104,
+    "published_at": "2026-06-16",
+    "created_at": "2026-06-23T13:18:47.516Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 192,
+  "fields": {
+    "channel": 7,
+    "video_id": "n8isAsSSWa8",
+    "title": "\"이상호가 1옵션?!\" 드디어 시작된 중간계 전야제! 밸런스 측정하는데 밸붕급 폼을 보여주는 이상호..?【중간계 시즌2 Ep.0】",
+    "view_count": 243868,
+    "like_count": 1037,
+    "comment_count": 118,
+    "published_at": "2026-06-14",
+    "created_at": "2026-06-23T13:18:47.516Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 193,
+  "fields": {
+    "channel": 7,
+    "video_id": "zT74vKM8mtU",
+    "title": "억대 현질한 제 맨유 팀이 영포티 같다고요?",
+    "view_count": 431865,
+    "like_count": 2649,
+    "comment_count": 174,
+    "published_at": "2026-06-13",
+    "created_at": "2026-06-23T13:18:47.516Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 194,
+  "fields": {
+    "channel": 7,
+    "video_id": "9BFKJ8dckxk",
+    "title": "하도 리신 니달리 못한다길래 꺼냈다가 1렙부터 일어난 대참사..!",
+    "view_count": 284737,
+    "like_count": 1270,
+    "comment_count": 167,
+    "published_at": "2026-06-12",
+    "created_at": "2026-06-23T13:18:47.516Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 195,
+  "fields": {
+    "channel": 7,
+    "video_id": "f5BgQinbGq4",
+    "title": "\"승률 90%\" 골드까지 단 한 걸음! 리신 니달리 자체 밴하니까 양학하고 다니는 이상호!",
+    "view_count": 316963,
+    "like_count": 1380,
+    "comment_count": 160,
+    "published_at": "2026-06-10",
+    "created_at": "2026-06-23T13:18:47.516Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 196,
+  "fields": {
+    "channel": 8,
+    "video_id": "ijMvC8QGNvw",
+    "title": "🔥르세라핌vs강나미, '디진다 돈까스' 대결!🥊",
+    "view_count": 1203323,
+    "like_count": 25597,
+    "comment_count": 1820,
+    "published_at": "2026-06-18",
+    "created_at": "2026-06-23T13:18:49.925Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 197,
+  "fields": {
+    "channel": 8,
+    "video_id": "NYCmvv_A4mQ",
+    "title": "제주도 당일치기(?)로 4끼 때려 부수고 왔습니다 ✈️🍽️",
+    "view_count": 672573,
+    "like_count": 5349,
+    "comment_count": 331,
+    "published_at": "2026-06-11",
+    "created_at": "2026-06-23T13:18:49.925Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 198,
+  "fields": {
+    "channel": 8,
+    "video_id": "14WRJKl3fQE",
+    "title": "신혼집들이만 하려다가 일본까지 가버렸습니다…(ft.지하철 친구)",
+    "view_count": 1740984,
+    "like_count": 24378,
+    "comment_count": 1331,
+    "published_at": "2026-06-09",
+    "created_at": "2026-06-23T13:18:49.925Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 199,
+  "fields": {
+    "channel": 8,
+    "video_id": "URJrux1lc-M",
+    "title": "결국 촬영 중단했습니다..🚨 수술실까지 들어가게 된 사연🏥💦",
+    "view_count": 1094769,
+    "like_count": 11757,
+    "comment_count": 794,
+    "published_at": "2026-06-04",
+    "created_at": "2026-06-23T13:18:49.925Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 200,
+  "fields": {
+    "channel": 8,
+    "video_id": "XieEDmU3Q7U",
+    "title": "시부 야호-! 갸루 강나미와 하늘이의 3일 간의 도쿄 여행 ✨",
+    "view_count": 405409,
+    "like_count": 5734,
+    "comment_count": 656,
+    "published_at": "2026-06-02",
+    "created_at": "2026-06-23T13:18:49.925Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 201,
+  "fields": {
+    "channel": 8,
+    "video_id": "CFTFqZm_Hlw",
+    "title": "이번엔 사기 아닙니다! 포켓몬 카드에 5000만 원 지른 강나미의 운명은?🔥",
+    "view_count": 899542,
+    "like_count": 9677,
+    "comment_count": 784,
+    "published_at": "2026-05-28",
+    "created_at": "2026-06-23T13:18:49.925Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 202,
+  "fields": {
+    "channel": 8,
+    "video_id": "Ul_npvOuKpA",
+    "title": "그동안 일본 마트 리뷰를 사랑해주셔서 감사합니다. feat.35년 친구",
+    "view_count": 546914,
+    "like_count": 7408,
+    "comment_count": 335,
+    "published_at": "2026-05-21",
+    "created_at": "2026-06-23T13:18:49.925Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 203,
+  "fields": {
+    "channel": 8,
+    "video_id": "fEJY3Lr3z2c",
+    "title": "촬영 중단하고 경찰서 간 썰. QWER 아키하바라 기강 잡으러 감👊🔥",
+    "view_count": 538421,
+    "like_count": 7953,
+    "comment_count": 675,
+    "published_at": "2026-05-14",
+    "created_at": "2026-06-23T13:18:49.925Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 204,
+  "fields": {
+    "channel": 8,
+    "video_id": "cZ2ZoMT-g_I",
+    "title": "80만원 태운 역대급 먹방!💸 마트부터 돈키호테까지 싹쓸어 담은 일본 먹거리 '최종 보스' 대공개!",
+    "view_count": 478753,
+    "like_count": 5028,
+    "comment_count": 226,
+    "published_at": "2026-05-07",
+    "created_at": "2026-06-23T13:18:49.925Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 205,
+  "fields": {
+    "channel": 8,
+    "video_id": "92vvi5FyxlY",
+    "title": "결국 엄마를 울렸습니다... 효도하려다 눈물바다 된 사연🥲✨",
+    "view_count": 391879,
+    "like_count": 6810,
+    "comment_count": 321,
+    "published_at": "2026-04-30",
+    "created_at": "2026-06-23T13:18:49.925Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 206,
+  "fields": {
+    "channel": 9,
+    "video_id": "zcZxo7E9bF0",
+    "title": "감히 시험하려 들지 마라",
+    "view_count": 435525,
+    "like_count": 8131,
+    "comment_count": 435,
+    "published_at": "2026-06-17",
+    "created_at": "2026-06-23T13:18:51.497Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 207,
+  "fields": {
+    "channel": 9,
+    "video_id": "K01pxM6mOUQ",
+    "title": "티모 잡는 날",
+    "view_count": 196954,
+    "like_count": 4388,
+    "comment_count": 180,
+    "published_at": "2026-06-10",
+    "created_at": "2026-06-23T13:18:51.497Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 208,
+  "fields": {
+    "channel": 9,
+    "video_id": "vO8Zy5y5I0s",
+    "title": "전문집사 이상혁",
+    "view_count": 311671,
+    "like_count": 6103,
+    "comment_count": 194,
+    "published_at": "2026-06-03",
+    "created_at": "2026-06-23T13:18:51.497Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 209,
+  "fields": {
+    "channel": 9,
+    "video_id": "D7FukLIjda8",
+    "title": "계란 한 판",
+    "view_count": 341236,
+    "like_count": 10796,
+    "comment_count": 346,
+    "published_at": "2026-05-27",
+    "created_at": "2026-06-23T13:18:51.497Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 210,
+  "fields": {
+    "channel": 9,
+    "video_id": "i5Rw-bA84Xg",
+    "title": "넌 못 지나간다",
+    "view_count": 239354,
+    "like_count": 5503,
+    "comment_count": 146,
+    "published_at": "2026-05-11",
+    "created_at": "2026-06-23T13:18:51.497Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 211,
+  "fields": {
+    "channel": 9,
+    "video_id": "VXEXCOUOOBM",
+    "title": "너 뭐 하는 애니?",
+    "view_count": 197788,
+    "like_count": 4633,
+    "comment_count": 154,
+    "published_at": "2026-04-24",
+    "created_at": "2026-06-23T13:18:51.497Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 212,
+  "fields": {
+    "channel": 9,
+    "video_id": "IT0mlafrYEM",
+    "title": "매혹",
+    "view_count": 353148,
+    "like_count": 9296,
+    "comment_count": 414,
+    "published_at": "2026-04-12",
+    "created_at": "2026-06-23T13:18:51.497Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 213,
+  "fields": {
+    "channel": 9,
+    "video_id": "Ia5dP5DTR-8",
+    "title": "수상할 정도로 카직스를 잘하는",
+    "view_count": 350446,
+    "like_count": 6558,
+    "comment_count": 224,
+    "published_at": "2026-04-05",
+    "created_at": "2026-06-23T13:18:51.497Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 214,
+  "fields": {
+    "channel": 9,
+    "video_id": "adhfGPYJFtk",
+    "title": "증바람",
+    "view_count": 730812,
+    "like_count": 10554,
+    "comment_count": 396,
+    "published_at": "2026-03-28",
+    "created_at": "2026-06-23T13:18:51.498Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 215,
+  "fields": {
+    "channel": 9,
+    "video_id": "k5UC25k6cK4",
+    "title": "5년 만에 페이커 손에 쥐어진 총검",
+    "view_count": 639492,
+    "like_count": 11685,
+    "comment_count": 256,
+    "published_at": "2026-03-13",
+    "created_at": "2026-06-23T13:18:51.498Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 216,
+  "fields": {
+    "channel": 10,
+    "video_id": "9IJExIkHLp0",
+    "title": "마크에서 제일 무섭다는 백룸 모드 (feat.지류)",
+    "view_count": 82743,
+    "like_count": 3257,
+    "comment_count": 315,
+    "published_at": "2026-06-23",
+    "created_at": "2026-06-23T13:18:53.086Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 217,
+  "fields": {
+    "channel": 10,
+    "video_id": "HJmMmI3tIdM",
+    "title": "종결 보디빌더 만났습니다 [씩씩한 보디빌딩 EP4]",
+    "view_count": 249953,
+    "like_count": 3504,
+    "comment_count": 408,
+    "published_at": "2026-06-22",
+    "created_at": "2026-06-23T13:18:53.086Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 218,
+  "fields": {
+    "channel": 10,
+    "video_id": "SEFSqkSUjcQ",
+    "title": "마크 공포모드 지립니다 (feat. 지류)",
+    "view_count": 549313,
+    "like_count": 8940,
+    "comment_count": 740,
+    "published_at": "2026-06-19",
+    "created_at": "2026-06-23T13:18:53.086Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 219,
+  "fields": {
+    "channel": 10,
+    "video_id": "Y6eE-90Um9s",
+    "title": "마크 유튜버 PVP 최강자전",
+    "view_count": 230480,
+    "like_count": 3273,
+    "comment_count": 587,
+    "published_at": "2026-06-16",
+    "created_at": "2026-06-23T13:18:53.086Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 220,
+  "fields": {
+    "channel": 10,
+    "video_id": "kr3HDNFrs7g",
+    "title": "월급 받으며 말왕 괴롭히기 [슬기로운 편집 생활 EP2]",
+    "view_count": 210711,
+    "like_count": 4139,
+    "comment_count": 412,
+    "published_at": "2026-06-14",
+    "created_at": "2026-06-23T13:18:53.086Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 221,
+  "fields": {
+    "channel": 10,
+    "video_id": "-Q-DM8yizkw",
+    "title": "종결 템 3명 VS 맨손 시청자 100명",
+    "view_count": 420478,
+    "like_count": 4879,
+    "comment_count": 608,
+    "published_at": "2026-06-12",
+    "created_at": "2026-06-23T13:18:53.086Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 222,
+  "fields": {
+    "channel": 10,
+    "video_id": "Bb8FWc2KvqE",
+    "title": "돌아온 공포 게임의 계절 [더 미믹]",
+    "view_count": 503435,
+    "like_count": 7229,
+    "comment_count": 704,
+    "published_at": "2026-06-10",
+    "created_at": "2026-06-23T13:18:53.086Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 223,
+  "fields": {
+    "channel": 10,
+    "video_id": "NwsurYZBg7w",
+    "title": "진지하게 드릴 말씀이 있습니다",
+    "view_count": 402000,
+    "like_count": 4913,
+    "comment_count": 633,
+    "published_at": "2026-06-08",
+    "created_at": "2026-06-23T13:18:53.086Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 224,
+  "fields": {
+    "channel": 10,
+    "video_id": "wTCtD83rVVM",
+    "title": "마인크래프트 천하통일 프로젝트",
+    "view_count": 431487,
+    "like_count": 8225,
+    "comment_count": 1732,
+    "published_at": "2026-06-06",
+    "created_at": "2026-06-23T13:18:53.087Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 225,
+  "fields": {
+    "channel": 10,
+    "video_id": "FwufELvNm4c",
+    "title": "식단+운동 3주 병행한 결과 [씩씩한 보디빌딩 EP3]",
+    "view_count": 176037,
+    "like_count": 1976,
+    "comment_count": 271,
+    "published_at": "2026-06-05",
+    "created_at": "2026-06-23T13:18:53.087Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 226,
+  "fields": {
+    "channel": 11,
+    "video_id": "sHxQmRuZzMI",
+    "title": "전 UFC 챔피언을 한국으로 초대한 김동현 l EP.1 우들리 한국 전지훈련",
+    "view_count": 204153,
+    "like_count": 4175,
+    "comment_count": 708,
+    "published_at": "2026-06-21",
+    "created_at": "2026-06-23T13:18:54.394Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 227,
+  "fields": {
+    "channel": 11,
+    "video_id": "M2TVx8vSMLg",
+    "title": "모든 경기 KO?! 백악관 UFC를 본 김동현 반응",
+    "view_count": 515955,
+    "like_count": 6409,
+    "comment_count": 1181,
+    "published_at": "2026-06-16",
+    "created_at": "2026-06-23T13:18:54.394Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 228,
+  "fields": {
+    "channel": 11,
+    "video_id": "57__KFSEwBk",
+    "title": "고석현 선수 경기가 잡혔습니다 (※경기 발표※)",
+    "view_count": 446622,
+    "like_count": 6300,
+    "comment_count": 941,
+    "published_at": "2026-06-14",
+    "created_at": "2026-06-23T13:18:54.394Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 229,
+  "fields": {
+    "channel": 11,
+    "video_id": "0UK0j9Zb03M",
+    "title": "생각지도 못했던 서브미션을 본 김동현의 반응",
+    "view_count": 331411,
+    "like_count": 5107,
+    "comment_count": 967,
+    "published_at": "2026-06-12",
+    "created_at": "2026-06-23T13:18:54.394Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 230,
+  "fields": {
+    "channel": 11,
+    "video_id": "8B9k9MzNx9I",
+    "title": "홍콩 하이록스에서 1등한 대한민국 아저씨들",
+    "view_count": 176096,
+    "like_count": 2443,
+    "comment_count": 541,
+    "published_at": "2026-06-09",
+    "created_at": "2026-06-23T13:18:54.395Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 231,
+  "fields": {
+    "channel": 11,
+    "video_id": "07KXA9fLRJU",
+    "title": "박준용에게 앵클락 당하는 고석현ㅣFinal EP. 한국 전지훈련 끝",
+    "view_count": 346325,
+    "like_count": 6249,
+    "comment_count": 981,
+    "published_at": "2026-06-07",
+    "created_at": "2026-06-23T13:18:54.395Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 232,
+  "fields": {
+    "channel": 11,
+    "video_id": "QmsToJVKy5g",
+    "title": "블랙컴뱃에 전지훈련 온 UFC 선수들ㅣEP.2 블랙컴뱃 전지훈련",
+    "view_count": 285685,
+    "like_count": 4399,
+    "comment_count": 1196,
+    "published_at": "2026-06-03",
+    "created_at": "2026-06-23T13:18:54.395Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 233,
+  "fields": {
+    "channel": 11,
+    "video_id": "JmguJjmzpYE",
+    "title": "블랙컴뱃짐으로 전지훈련 간 고석현과 오반 l EP.1 오반 한국 전지훈련",
+    "view_count": 361987,
+    "like_count": 5803,
+    "comment_count": 1382,
+    "published_at": "2026-05-30",
+    "created_at": "2026-06-23T13:18:54.395Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 234,
+  "fields": {
+    "channel": 11,
+    "video_id": "MmqtvDMb1qw",
+    "title": "본투윈과 마지막 이야기 l Final EP. 본투윈 전지훈련",
+    "view_count": 349308,
+    "like_count": 5206,
+    "comment_count": 1235,
+    "published_at": "2026-05-26",
+    "created_at": "2026-06-23T13:18:54.395Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 235,
+  "fields": {
+    "channel": 11,
+    "video_id": "RyPFuSrntwg",
+    "title": "패디한테 태클 들어가는 고석현ㅣ EP.8 리버풀 전지훈련",
+    "view_count": 449488,
+    "like_count": 6063,
+    "comment_count": 1719,
+    "published_at": "2026-05-23",
+    "created_at": "2026-06-23T13:18:54.395Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 236,
+  "fields": {
+    "channel": 12,
+    "video_id": "3B-Qw4zrbII",
+    "title": "홍명보호가 안타까운 이유",
+    "view_count": 334885,
+    "like_count": 6244,
+    "comment_count": 3642,
+    "published_at": "2026-06-19",
+    "created_at": "2026-06-23T13:18:55.585Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 237,
+  "fields": {
+    "channel": 12,
+    "video_id": "JtBopQE5Krs",
+    "title": "메시가 여전히 세계 최고인 이유",
+    "view_count": 337211,
+    "like_count": 5109,
+    "comment_count": 816,
+    "published_at": "2026-06-18",
+    "created_at": "2026-06-23T13:18:55.585Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 238,
+  "fields": {
+    "channel": 12,
+    "video_id": "DHVTWske-18",
+    "title": "손흥민은 정말 후보여야 할까?",
+    "view_count": 366685,
+    "like_count": 6981,
+    "comment_count": 3828,
+    "published_at": "2026-06-14",
+    "created_at": "2026-06-23T13:18:55.585Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 239,
+  "fields": {
+    "channel": 12,
+    "video_id": "Ce93hCAcKMo",
+    "title": "극적인 역전승이 가능했던 이유",
+    "view_count": 481175,
+    "like_count": 8027,
+    "comment_count": 1825,
+    "published_at": "2026-06-12",
+    "created_at": "2026-06-23T13:18:55.585Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 240,
+  "fields": {
+    "channel": 12,
+    "video_id": "dpqe3BCV2eg",
+    "title": "피파 랭킹 1위가 월드컵 우승을 못하는 이유",
+    "view_count": 238957,
+    "like_count": 2892,
+    "comment_count": 526,
+    "published_at": "2026-06-11",
+    "created_at": "2026-06-23T13:18:55.585Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 241,
+  "fields": {
+    "channel": 12,
+    "video_id": "CjAKoWvihjs",
+    "title": "음바페가 월드컵만 가면 날아다니는 이유",
+    "view_count": 221230,
+    "like_count": 2553,
+    "comment_count": 368,
+    "published_at": "2026-06-09",
+    "created_at": "2026-06-23T13:18:55.585Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 242,
+  "fields": {
+    "channel": 12,
+    "video_id": "GHhZjIv_cck",
+    "title": "일본인이 예상하는 한국의 월드컵 성적",
+    "view_count": 41596,
+    "like_count": 665,
+    "comment_count": 96,
+    "published_at": "2026-06-08",
+    "created_at": "2026-06-23T13:18:55.586Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 243,
+  "fields": {
+    "channel": 12,
+    "video_id": "AVGeUOGK3qM",
+    "title": "왜 빅클럽은 되는데 한국은 안될까?",
+    "view_count": 240542,
+    "like_count": 3434,
+    "comment_count": 747,
+    "published_at": "2026-05-28",
+    "created_at": "2026-06-23T13:18:55.586Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 244,
+  "fields": {
+    "channel": 12,
+    "video_id": "2nizyQEdMhs",
+    "title": "현재 난리난 PSG의 '골킥 전술'이 거짓인 이유",
+    "view_count": 179845,
+    "like_count": 2670,
+    "comment_count": 417,
+    "published_at": "2026-05-16",
+    "created_at": "2026-06-23T13:18:55.586Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 245,
+  "fields": {
+    "channel": 12,
+    "video_id": "uhupbLndhvk",
+    "title": "레알이 망해가는 이유",
+    "view_count": 519165,
+    "like_count": 6986,
+    "comment_count": 1037,
+    "published_at": "2026-05-11",
+    "created_at": "2026-06-23T13:18:55.586Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 246,
+  "fields": {
+    "channel": 13,
+    "video_id": "FvhFRIb-HJU",
+    "title": "사장님이 미쳤어요",
+    "view_count": 1046901,
+    "like_count": 14662,
+    "comment_count": 1158,
+    "published_at": "2026-06-18",
+    "created_at": "2026-06-23T13:18:56.897Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 247,
+  "fields": {
+    "channel": 13,
+    "video_id": "iDZFaWwO_Aw",
+    "title": "하이닉스를 사라고요? 왜요?",
+    "view_count": 756747,
+    "like_count": 9443,
+    "comment_count": 918,
+    "published_at": "2026-06-13",
+    "created_at": "2026-06-23T13:18:56.897Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 248,
+  "fields": {
+    "channel": 13,
+    "video_id": "3GUSGbtVNqo",
+    "title": "직장인의 이중생활",
+    "view_count": 2163974,
+    "like_count": 31366,
+    "comment_count": 2105,
+    "published_at": "2026-04-29",
+    "created_at": "2026-06-23T13:18:56.898Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 249,
+  "fields": {
+    "channel": 13,
+    "video_id": "JxSyrsBLVtg",
+    "title": "계산하면서 때려야 됨",
+    "view_count": 900721,
+    "like_count": 12111,
+    "comment_count": 1188,
+    "published_at": "2026-04-09",
+    "created_at": "2026-06-23T13:18:56.898Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 250,
+  "fields": {
+    "channel": 13,
+    "video_id": "gCv1J_ZncPo",
+    "title": "[4K ASMR] 10분 내 무의식 이완 유도, 뇌가 편안해지는 리얼 장작 소리 (백색소음/공부/딥슬립)",
+    "view_count": 396213,
+    "like_count": 5755,
+    "comment_count": 470,
+    "published_at": "2026-03-26",
+    "created_at": "2026-06-23T13:18:56.898Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 251,
+  "fields": {
+    "channel": 13,
+    "video_id": "UySfWbE2xi4",
+    "title": "커피 시켰는데 문제 있나요?",
+    "view_count": 1016114,
+    "like_count": 12722,
+    "comment_count": 756,
+    "published_at": "2026-03-11",
+    "created_at": "2026-06-23T13:18:56.898Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 252,
+  "fields": {
+    "channel": 13,
+    "video_id": "0Zf6nJfHWC4",
+    "title": "우리 딸이랑 결혼을 한다고?",
+    "view_count": 2061186,
+    "like_count": 23883,
+    "comment_count": 1067,
+    "published_at": "2026-03-04",
+    "created_at": "2026-06-23T13:18:56.898Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 253,
+  "fields": {
+    "channel": 13,
+    "video_id": "7lzsJYNWkHQ",
+    "title": "취업이 안 되는데요?",
+    "view_count": 1169687,
+    "like_count": 15110,
+    "comment_count": 1848,
+    "published_at": "2026-02-17",
+    "created_at": "2026-06-23T13:18:56.898Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 254,
+  "fields": {
+    "channel": 13,
+    "video_id": "IJlB_wRSu18",
+    "title": "너무 제 이상형이셔서",
+    "view_count": 779232,
+    "like_count": 9752,
+    "comment_count": 497,
+    "published_at": "2026-02-13",
+    "created_at": "2026-06-23T13:18:56.898Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 255,
+  "fields": {
+    "channel": 13,
+    "video_id": "yNRx62XxF-g",
+    "title": "인사 안 해요?",
+    "view_count": 994196,
+    "like_count": 12606,
+    "comment_count": 1591,
+    "published_at": "2026-02-06",
+    "created_at": "2026-06-23T13:18:56.898Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 256,
+  "fields": {
+    "channel": 14,
+    "video_id": "B1TXNN5HJdg",
+    "title": "최유정과 함께",
+    "view_count": 90260,
+    "like_count": 4503,
+    "comment_count": 493,
+    "published_at": "2026-06-23",
+    "created_at": "2026-06-23T13:18:58.308Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 257,
+  "fields": {
+    "channel": 14,
+    "video_id": "d66PqZaMnLs",
+    "title": "자영업자의 하루",
+    "view_count": 968503,
+    "like_count": 24865,
+    "comment_count": 2472,
+    "published_at": "2026-06-18",
+    "created_at": "2026-06-23T13:18:58.308Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 258,
+  "fields": {
+    "channel": 14,
+    "video_id": "KQNcXLLd8X8",
+    "title": "퇴사한 직원들 리즈시절 되찾아주기",
+    "view_count": 842223,
+    "like_count": 15803,
+    "comment_count": 1004,
+    "published_at": "2026-06-08",
+    "created_at": "2026-06-23T13:18:58.308Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 259,
+  "fields": {
+    "channel": 14,
+    "video_id": "PawXOUp16JI",
+    "title": "부크루장 권화운과 함께",
+    "view_count": 614948,
+    "like_count": 10940,
+    "comment_count": 593,
+    "published_at": "2026-05-31",
+    "created_at": "2026-06-23T13:18:58.308Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 260,
+  "fields": {
+    "channel": 14,
+    "video_id": "C1bKk1D9U3s",
+    "title": "해군 병장 기안84의 하루",
+    "view_count": 1019950,
+    "like_count": 17871,
+    "comment_count": 2202,
+    "published_at": "2026-05-27",
+    "created_at": "2026-06-23T13:18:58.308Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 261,
+  "fields": {
+    "channel": 14,
+    "video_id": "RdNjQeTUMGE",
+    "title": "드디어 돌아온 강미나",
+    "view_count": 1644504,
+    "like_count": 31289,
+    "comment_count": 5517,
+    "published_at": "2026-05-14",
+    "created_at": "2026-06-23T13:18:58.308Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 262,
+  "fields": {
+    "channel": 14,
+    "video_id": "7WgoRraWh1k",
+    "title": "솔로지옥84",
+    "view_count": 728895,
+    "like_count": 12106,
+    "comment_count": 1531,
+    "published_at": "2026-05-06",
+    "created_at": "2026-06-23T13:18:58.308Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 263,
+  "fields": {
+    "channel": 14,
+    "video_id": "yaExKpBI9_Q",
+    "title": "기안84 일본어 과외 선생님과 함께",
+    "view_count": 1384045,
+    "like_count": 22218,
+    "comment_count": 1405,
+    "published_at": "2026-04-24",
+    "created_at": "2026-06-23T13:18:58.308Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 264,
+  "fields": {
+    "channel": 14,
+    "video_id": "e9wzppk8zIk",
+    "title": "형수님과 태교 여행",
+    "view_count": 1429737,
+    "like_count": 23519,
+    "comment_count": 1169,
+    "published_at": "2026-04-18",
+    "created_at": "2026-06-23T13:18:58.308Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelrecentvideo",
+  "pk": 265,
+  "fields": {
+    "channel": 14,
+    "video_id": "lNPtBF7vXrs",
+    "title": "김민지와 함께",
+    "view_count": 928131,
+    "like_count": 15464,
+    "comment_count": 1091,
+    "published_at": "2026-04-06",
+    "created_at": "2026-06-23T13:18:58.308Z"
+  }
+},
+{
+  "model": "marketing.youtubeinfluenceranalysis",
+  "pk": 1,
+  "fields": {
+    "campaign": 1,
+    "youtube_url": "https://www.youtube.com/watch?v=EkqSyhxmNoY",
+    "channel_name": "이민정 MJ",
+    "subscriber_count": 543000,
+    "video_title": "20년 만에 다시 찾은 로마. 이민정 인생 첫 해방여행 (준후야 서이야 남편아 고마워)",
+    "view_count": 17264,
+    "like_count": 715,
+    "comment_count": 93,
+    "published_at": "2026-06-23",
+    "paid_amount": 20000000,
+    "cost_per_view": 1158.48,
+    "consultation_count": 42,
+    "contract_count": 6,
+    "cost_per_consultation": 476190.48,
+    "cost_per_contract": 3333333.33,
+    "created_at": "2026-06-23T13:13:19.758Z"
+  }
+},
+{
+  "model": "marketing.youtubeinfluenceranalysis",
+  "pk": 2,
+  "fields": {
+    "campaign": 3,
+    "youtube_url": "https://www.youtube.com/watch?v=cuxG-Ps6J4Y",
+    "channel_name": "침착맨",
+    "subscriber_count": 3170000,
+    "video_title": "술 한잔 했습니다 (with 은하, 맛피자, 카라미)",
+    "view_count": 83860,
+    "like_count": 2510,
+    "comment_count": 444,
+    "published_at": "2026-06-23",
+    "paid_amount": 15500000,
+    "cost_per_view": 184.83,
+    "consultation_count": 28,
+    "contract_count": 6,
+    "cost_per_consultation": 553571.43,
+    "cost_per_contract": 2583333.33,
+    "created_at": "2026-06-23T13:13:19.777Z"
+  }
+},
+{
+  "model": "marketing.youtubeinfluenceranalysis",
+  "pk": 3,
+  "fields": {
+    "campaign": 4,
+    "youtube_url": "https://www.youtube.com/watch?v=037-lnkkOXU",
+    "channel_name": "이상호",
+    "subscriber_count": 974000,
+    "video_title": "\"결승까지 단 한 걸음\" 시청자 모두가 놀란 최약체팀의 유쾌한 반란..!",
+    "view_count": 106703,
+    "like_count": 519,
+    "comment_count": 39,
+    "published_at": "2026-06-22",
+    "paid_amount": 3500000,
+    "cost_per_view": 32.8,
+    "consultation_count": 21,
+    "contract_count": 4,
+    "cost_per_consultation": 166666.67,
+    "cost_per_contract": 875000.0,
+    "created_at": "2026-06-23T13:13:19.786Z"
+  }
+},
+{
+  "model": "marketing.youtubeinfluenceranalysis",
+  "pk": 4,
+  "fields": {
+    "campaign": 5,
+    "youtube_url": "https://www.youtube.com/watch?v=ijMvC8QGNvw",
+    "channel_name": "강남",
+    "subscriber_count": 1490000,
+    "video_title": "🔥르세라핌vs강나미, '디진다 돈까스' 대결!🥊",
+    "view_count": 1203323,
+    "like_count": 25597,
+    "comment_count": 1820,
+    "published_at": "2026-06-18",
+    "paid_amount": 7500000,
+    "cost_per_view": 6.23,
+    "consultation_count": 10,
+    "contract_count": 3,
+    "cost_per_consultation": 750000.0,
+    "cost_per_contract": 2500000.0,
+    "created_at": "2026-06-23T13:13:19.795Z"
+  }
+},
+{
+  "model": "marketing.youtubeinfluenceranalysis",
+  "pk": 5,
+  "fields": {
+    "campaign": 6,
+    "youtube_url": "https://www.youtube.com/watch?v=zcZxo7E9bF0",
+    "channel_name": "페이커",
+    "subscriber_count": 2120000,
+    "video_title": "감히 시험하려 들지 마라",
+    "view_count": 435525,
+    "like_count": 8131,
+    "comment_count": 435,
+    "published_at": "2026-06-17",
+    "paid_amount": 14000000,
+    "cost_per_view": 32.15,
+    "consultation_count": 109,
+    "contract_count": 13,
+    "cost_per_consultation": 128440.37,
+    "cost_per_contract": 1076923.08,
+    "created_at": "2026-06-23T13:13:19.803Z"
+  }
+},
+{
+  "model": "marketing.youtubeinfluenceranalysis",
+  "pk": 6,
+  "fields": {
+    "campaign": 7,
+    "youtube_url": "https://www.youtube.com/watch?v=9IJExIkHLp0",
+    "channel_name": "말왕",
+    "subscriber_count": 1820000,
+    "video_title": "마크에서 제일 무섭다는 백룸 모드 (feat.지류)",
+    "view_count": 82743,
+    "like_count": 3257,
+    "comment_count": 315,
+    "published_at": "2026-06-23",
+    "paid_amount": 16000000,
+    "cost_per_view": 193.37,
+    "consultation_count": 34,
+    "contract_count": 8,
+    "cost_per_consultation": 470588.24,
+    "cost_per_contract": 2000000.0,
+    "created_at": "2026-06-23T13:13:19.813Z"
+  }
+},
+{
+  "model": "marketing.youtubeinfluenceranalysis",
+  "pk": 7,
+  "fields": {
+    "campaign": 8,
+    "youtube_url": "https://www.youtube.com/watch?v=sHxQmRuZzMI",
+    "channel_name": "매미킴",
+    "subscriber_count": 1200000,
+    "video_title": "전 UFC 챔피언을 한국으로 초대한 김동현 l EP.1 우들리 한국 전지훈련",
+    "view_count": 204153,
+    "like_count": 4175,
+    "comment_count": 708,
+    "published_at": "2026-06-21",
+    "paid_amount": 4500000,
+    "cost_per_view": 22.04,
+    "consultation_count": 6,
+    "contract_count": 2,
+    "cost_per_consultation": 750000.0,
+    "cost_per_contract": 2250000.0,
+    "created_at": "2026-06-23T13:13:19.824Z"
+  }
+},
+{
+  "model": "marketing.youtubeinfluenceranalysis",
+  "pk": 8,
+  "fields": {
+    "campaign": 9,
+    "youtube_url": "https://www.youtube.com/watch?v=3B-Qw4zrbII",
+    "channel_name": "김진짜",
+    "subscriber_count": 1050000,
+    "video_title": "홍명보호가 안타까운 이유",
+    "view_count": 334885,
+    "like_count": 6244,
+    "comment_count": 3642,
+    "published_at": "2026-06-19",
+    "paid_amount": 78000000,
+    "cost_per_view": 232.92,
+    "consultation_count": 60,
+    "contract_count": 10,
+    "cost_per_consultation": 1300000.0,
+    "cost_per_contract": 7800000.0,
+    "created_at": "2026-06-23T13:13:19.835Z"
+  }
+},
+{
+  "model": "marketing.youtubeinfluenceranalysis",
+  "pk": 9,
+  "fields": {
+    "campaign": 10,
+    "youtube_url": "https://www.youtube.com/watch?v=FvhFRIb-HJU",
+    "channel_name": "너덜트",
+    "subscriber_count": 2210000,
+    "video_title": "사장님이 미쳤어요",
+    "view_count": 1046901,
+    "like_count": 14662,
+    "comment_count": 1158,
+    "published_at": "2026-06-18",
+    "paid_amount": 89000000,
+    "cost_per_view": 85.01,
+    "consultation_count": 7,
+    "contract_count": 2,
+    "cost_per_consultation": 12714285.71,
+    "cost_per_contract": 44500000.0,
+    "created_at": "2026-06-23T13:13:19.845Z"
+  }
+},
+{
+  "model": "marketing.youtubeinfluenceranalysis",
+  "pk": 10,
+  "fields": {
+    "campaign": 11,
+    "youtube_url": "https://www.youtube.com/watch?v=B1TXNN5HJdg",
+    "channel_name": "기안84",
+    "subscriber_count": 1660000,
+    "video_title": "최유정과 함께",
+    "view_count": 90260,
+    "like_count": 4503,
+    "comment_count": 493,
+    "published_at": "2026-06-23",
+    "paid_amount": 15500000,
+    "cost_per_view": 171.73,
+    "consultation_count": 47,
+    "contract_count": 9,
+    "cost_per_consultation": 329787.23,
+    "cost_per_contract": 1722222.22,
+    "created_at": "2026-06-23T13:13:19.855Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelanalysis",
+  "pk": 1,
+  "fields": {
+    "campaign": 1,
+    "channel_url": "https://www.youtube.com/@Rheeminjung_MJ/videos",
+    "channel_id": "UCFNUGAiaGRgzVCXrjVoe1Hw",
+    "channel_name": "이민정 MJ",
+    "subscriber_count": 543000,
+    "total_view_count": 365026409,
+    "video_count": 436,
+    "recent_video_count": 10,
+    "recent_avg_views": 383088.8,
+    "recent_median_views": 397038.5,
+    "recent_min_views": 17264,
+    "recent_max_views": 890342,
+    "subscriber_view_rate": 70.55,
+    "expected_paid_amount": 20000000,
+    "avg_cost_per_view": 52.21,
+    "median_cost_per_view": 50.37,
+    "created_at": "2026-06-23T12:47:20.113Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelanalysis",
+  "pk": 2,
+  "fields": {
+    "campaign": 3,
+    "channel_url": "https://www.youtube.com/@ChimChakMan_Official",
+    "channel_id": "UCUj6rrhMTR9pipbAWBAMvUQ",
+    "channel_name": "침착맨",
+    "subscriber_count": 3170000,
+    "total_view_count": 5725520877,
+    "video_count": 7566,
+    "recent_video_count": 10,
+    "recent_avg_views": 761800.3,
+    "recent_median_views": 593059.5,
+    "recent_min_views": 83860,
+    "recent_max_views": 2426674,
+    "subscriber_view_rate": 24.03,
+    "expected_paid_amount": 15500000,
+    "avg_cost_per_view": 20.35,
+    "median_cost_per_view": 26.14,
+    "created_at": "2026-06-23T13:13:19.780Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelanalysis",
+  "pk": 3,
+  "fields": {
+    "campaign": 4,
+    "channel_url": "https://www.youtube.com/@LeeSangHoTV",
+    "channel_id": "UCfIUuMA7U_jImP7oWfTe4Pw",
+    "channel_name": "이상호",
+    "subscriber_count": 974000,
+    "total_view_count": 772972811,
+    "video_count": 2574,
+    "recent_video_count": 10,
+    "recent_avg_views": 226805.3,
+    "recent_median_views": 206670.0,
+    "recent_min_views": 106703,
+    "recent_max_views": 431865,
+    "subscriber_view_rate": 23.29,
+    "expected_paid_amount": 3500000,
+    "avg_cost_per_view": 15.43,
+    "median_cost_per_view": 16.94,
+    "created_at": "2026-06-23T13:13:19.788Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelanalysis",
+  "pk": 4,
+  "fields": {
+    "campaign": 5,
+    "channel_url": "https://www.youtube.com/@sanghwahusband",
+    "channel_id": "UCrAhzG4rf642oTUCpdyo5Vw",
+    "channel_name": "강남",
+    "subscriber_count": 1490000,
+    "total_view_count": 909573133,
+    "video_count": 973,
+    "recent_video_count": 10,
+    "recent_avg_views": 797256.7,
+    "recent_median_views": 609743.5,
+    "recent_min_views": 391879,
+    "recent_max_views": 1740984,
+    "subscriber_view_rate": 53.51,
+    "expected_paid_amount": 7500000,
+    "avg_cost_per_view": 9.41,
+    "median_cost_per_view": 12.3,
+    "created_at": "2026-06-23T13:13:19.797Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelanalysis",
+  "pk": 5,
+  "fields": {
+    "campaign": 6,
+    "channel_url": "https://www.youtube.com/@T1_Faker",
+    "channel_id": "UCpJw2H9KKqwCCGQKRh1Bf2w",
+    "channel_name": "페이커",
+    "subscriber_count": 2120000,
+    "total_view_count": 460309616,
+    "video_count": 1459,
+    "recent_video_count": 10,
+    "recent_avg_views": 379642.6,
+    "recent_median_views": 345841.0,
+    "recent_min_views": 196954,
+    "recent_max_views": 730812,
+    "subscriber_view_rate": 17.91,
+    "expected_paid_amount": 14000000,
+    "avg_cost_per_view": 36.88,
+    "median_cost_per_view": 40.48,
+    "created_at": "2026-06-23T13:13:19.805Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelanalysis",
+  "pk": 6,
+  "fields": {
+    "campaign": 7,
+    "channel_url": "https://www.youtube.com/@MrRagoona88",
+    "channel_id": "UCYJDUekoQz0-bo8al1diLWQ",
+    "channel_name": "말왕",
+    "subscriber_count": 1820000,
+    "total_view_count": 1211005810,
+    "video_count": 1661,
+    "recent_video_count": 10,
+    "recent_avg_views": 325663.7,
+    "recent_median_views": 325976.5,
+    "recent_min_views": 82743,
+    "recent_max_views": 549313,
+    "subscriber_view_rate": 17.89,
+    "expected_paid_amount": 16000000,
+    "avg_cost_per_view": 49.13,
+    "median_cost_per_view": 49.08,
+    "created_at": "2026-06-23T13:13:19.816Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelanalysis",
+  "pk": 7,
+  "fields": {
+    "campaign": 8,
+    "channel_url": "https://www.youtube.com/@stungunTV",
+    "channel_id": "UCXVhGNDrOfVUYEvuRdM0OXA",
+    "channel_name": "매미킴",
+    "subscriber_count": 1200000,
+    "total_view_count": 745181984,
+    "video_count": 1657,
+    "recent_video_count": 10,
+    "recent_avg_views": 346703.0,
+    "recent_median_views": 347816.5,
+    "recent_min_views": 176096,
+    "recent_max_views": 515955,
+    "subscriber_view_rate": 28.89,
+    "expected_paid_amount": 4500000,
+    "avg_cost_per_view": 12.98,
+    "median_cost_per_view": 12.94,
+    "created_at": "2026-06-23T13:13:19.828Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelanalysis",
+  "pk": 8,
+  "fields": {
+    "campaign": 9,
+    "channel_url": "https://www.youtube.com/@realkim10",
+    "channel_id": "UChb4gtsgSdwMDktdLukfrfw",
+    "channel_name": "김진짜",
+    "subscriber_count": 1050000,
+    "total_view_count": 334173032,
+    "video_count": 685,
+    "recent_video_count": 10,
+    "recent_avg_views": 296129.1,
+    "recent_median_views": 287713.5,
+    "recent_min_views": 41596,
+    "recent_max_views": 519165,
+    "subscriber_view_rate": 28.2,
+    "expected_paid_amount": 78000000,
+    "avg_cost_per_view": 263.4,
+    "median_cost_per_view": 271.1,
+    "created_at": "2026-06-23T13:13:19.838Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelanalysis",
+  "pk": 9,
+  "fields": {
+    "campaign": 10,
+    "channel_url": "https://www.youtube.com/@NERDULT",
+    "channel_id": "UCXEKwWflysXu312NmIP_dlw",
+    "channel_name": "너덜트",
+    "subscriber_count": 2210000,
+    "total_view_count": 624724343,
+    "video_count": 211,
+    "recent_video_count": 10,
+    "recent_avg_views": 1128497.1,
+    "recent_median_views": 1005155.0,
+    "recent_min_views": 396213,
+    "recent_max_views": 2163974,
+    "subscriber_view_rate": 51.06,
+    "expected_paid_amount": 89000000,
+    "avg_cost_per_view": 78.87,
+    "median_cost_per_view": 88.54,
+    "created_at": "2026-06-23T13:13:19.848Z"
+  }
+},
+{
+  "model": "marketing.youtubechannelanalysis",
+  "pk": 10,
+  "fields": {
+    "campaign": 11,
+    "channel_url": "https://www.youtube.com/@geean84",
+    "channel_id": "UC1Rz7a_DWtsE9cQwSyElE0Q",
+    "channel_name": "기안84",
+    "subscriber_count": 1660000,
+    "total_view_count": 366868722,
+    "video_count": 469,
+    "recent_video_count": 10,
+    "recent_avg_views": 965119.6,
+    "recent_median_views": 948317.0,
+    "recent_min_views": 90260,
+    "recent_max_views": 1644504,
+    "subscriber_view_rate": 58.14,
+    "expected_paid_amount": 15500000,
+    "avg_cost_per_view": 16.06,
+    "median_cost_per_view": 16.34,
+    "created_at": "2026-06-23T13:13:19.858Z"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 111,
+  "fields": {
+    "analysis": 1,
+    "video_id": "EkqSyhxmNoY",
+    "title": "20년 만에 다시 찾은 로마. 이민정 인생 첫 해방여행 (준후야 서이야 남편아 고마워)",
+    "view_count": 17264,
+    "like_count": 715,
+    "comment_count": 93,
+    "published_at": "2026-06-23"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 112,
+  "fields": {
+    "analysis": 1,
+    "video_id": "aEz8W7QdIfk",
+    "title": "엄마 이태리 갔다 온다. 이민정이 준비한 최후의 만찬 *울지 말고 치즈 먹어",
+    "view_count": 123561,
+    "like_count": 1603,
+    "comment_count": 125,
+    "published_at": "2026-06-16"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 113,
+  "fields": {
+    "analysis": 1,
+    "video_id": "hM5qBUkY2hA",
+    "title": "학부모 이민정, 아들과 농구 레전드 전태풍에게 레벨테스트 받으러 가다",
+    "view_count": 655096,
+    "like_count": 5481,
+    "comment_count": 507,
+    "published_at": "2026-06-09"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 114,
+  "fields": {
+    "analysis": 1,
+    "video_id": "7LjulWDc3B8",
+    "title": "다시 놀러온 내친구 제성이 제성이~🌼 순천 싸움꾼이 전교 10등이 되기까지. *황제성 인생 설명회",
+    "view_count": 485258,
+    "like_count": 6654,
+    "comment_count": 521,
+    "published_at": "2026-06-02"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 115,
+  "fields": {
+    "analysis": 1,
+    "video_id": "8ySxu5d5R3c",
+    "title": "여자들끼리만 떠나요~ 제주도에 놀러간 이민정네 세 모녀 *3대가 함께하는 딸 육아현장",
+    "view_count": 174988,
+    "like_count": 2397,
+    "comment_count": 125,
+    "published_at": "2026-05-26"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 116,
+  "fields": {
+    "analysis": 1,
+    "video_id": "Pje9HLFqas8",
+    "title": "춤 알려주러 왔다가 이민정한테 찜 쪄지고 간 비 *전남편시리즈 2탄",
+    "view_count": 602081,
+    "like_count": 7121,
+    "comment_count": 399,
+    "published_at": "2026-05-19"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 117,
+  "fields": {
+    "analysis": 1,
+    "video_id": "7MwDNGq68aI",
+    "title": "애들없이 나홀로 유럽 여행 떠나는 이민정 ”저 뭐 입고 갈까요?“",
+    "view_count": 88221,
+    "like_count": 1718,
+    "comment_count": 334,
+    "published_at": "2026-05-12"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 118,
+  "fields": {
+    "analysis": 1,
+    "video_id": "Cy9qdAPE1h0",
+    "title": "\"할거면 제대로 해.\" 찐 현지 갸루걸이 된 이민정 (with 시네)",
+    "view_count": 415891,
+    "like_count": 5319,
+    "comment_count": 595,
+    "published_at": "2026-05-06"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 119,
+  "fields": {
+    "analysis": 1,
+    "video_id": "TpSsIg_1rYk",
+    "title": "일본에서 뵨사마를 만나다..! (촬영: 이민정)",
+    "view_count": 890342,
+    "like_count": 15093,
+    "comment_count": 894,
+    "published_at": "2026-04-30"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 120,
+  "fields": {
+    "analysis": 1,
+    "video_id": "ZGyLlAG8F88",
+    "title": "소소한데 재밌는 이민정네 집 주말 풍경 공개 *MJ 딸 이만큼 컸어요~!",
+    "view_count": 378186,
+    "like_count": 5173,
+    "comment_count": 280,
+    "published_at": "2026-04-24"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 121,
+  "fields": {
+    "analysis": 2,
+    "video_id": "cuxG-Ps6J4Y",
+    "title": "술 한잔 했습니다 (with 은하, 맛피자, 카라미)",
+    "view_count": 83860,
+    "like_count": 2510,
+    "comment_count": 444,
+    "published_at": "2026-06-23"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 122,
+  "fields": {
+    "analysis": 2,
+    "video_id": "JV6Topsze2o",
+    "title": "100년 전통 그룹 다비치의 강민경 님이 추천한 김밥",
+    "view_count": 362898,
+    "like_count": 3720,
+    "comment_count": 437,
+    "published_at": "2026-06-22"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 123,
+  "fields": {
+    "analysis": 2,
+    "video_id": "5Nj7PB4HmfM",
+    "title": "리뷰 유튜버들의 전략과 고충",
+    "view_count": 230529,
+    "like_count": 2911,
+    "comment_count": 282,
+    "published_at": "2026-06-21"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 124,
+  "fields": {
+    "analysis": 2,
+    "video_id": "re5l6zWCPfs",
+    "title": "충격적인 비주얼의 롯데리아 신메뉴",
+    "view_count": 764652,
+    "like_count": 6224,
+    "comment_count": 616,
+    "published_at": "2026-06-18"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 125,
+  "fields": {
+    "analysis": 2,
+    "video_id": "Ty-CTEIGpJE",
+    "title": "억울한 김기열과 젠슨황 정식 먹방",
+    "view_count": 353966,
+    "like_count": 3552,
+    "comment_count": 310,
+    "published_at": "2026-06-17"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 126,
+  "fields": {
+    "analysis": 2,
+    "video_id": "DG4us_SKI-I",
+    "title": "휴가 중에 있었던 일들",
+    "view_count": 523509,
+    "like_count": 4864,
+    "comment_count": 240,
+    "published_at": "2026-06-16"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 127,
+  "fields": {
+    "analysis": 2,
+    "video_id": "YY0hAt4QT6g",
+    "title": "시청자 비밀 레시피 먹어보기",
+    "view_count": 662610,
+    "like_count": 5706,
+    "comment_count": 474,
+    "published_at": "2026-06-15"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 128,
+  "fields": {
+    "analysis": 2,
+    "video_id": "z9pVFFikowI",
+    "title": "지방인이 무조건 긁히는 순간 월드컵 (with 리센느 원이 & 미나미)",
+    "view_count": 1384272,
+    "like_count": 17106,
+    "comment_count": 1442,
+    "published_at": "2026-06-14"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 129,
+  "fields": {
+    "analysis": 2,
+    "video_id": "wbfy9Tm0UjA",
+    "title": "리센느 원이 & 미나미 초대석",
+    "view_count": 2426674,
+    "like_count": 40785,
+    "comment_count": 3088,
+    "published_at": "2026-06-11"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 130,
+  "fields": {
+    "analysis": 2,
+    "video_id": "RcU-7lx8EDU",
+    "title": "시간 여행은 물리학적으로 가능할까?",
+    "view_count": 825033,
+    "like_count": 8331,
+    "comment_count": 778,
+    "published_at": "2026-06-10"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 131,
+  "fields": {
+    "analysis": 3,
+    "video_id": "037-lnkkOXU",
+    "title": "\"결승까지 단 한 걸음\" 시청자 모두가 놀란 최약체팀의 유쾌한 반란..!",
+    "view_count": 106703,
+    "like_count": 519,
+    "comment_count": 39,
+    "published_at": "2026-06-22"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 132,
+  "fields": {
+    "analysis": 3,
+    "video_id": "PtWAB4erQ0c",
+    "title": "\"4강 진출 희망이 보인다..!\" 예선전 광탈을 피하기 위한 최종 점검에 나선 이상호팀!",
+    "view_count": 113937,
+    "like_count": 552,
+    "comment_count": 48,
+    "published_at": "2026-06-20"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 133,
+  "fields": {
+    "analysis": 3,
+    "video_id": "sjpW_C4LDzA",
+    "title": "\"아 지금 이상호 노스마에요!\" 중간계 광탈 위기의 순간.. 과연 이상호 팀의 운명은?!",
+    "view_count": 169046,
+    "like_count": 724,
+    "comment_count": 64,
+    "published_at": "2026-06-20"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 134,
+  "fields": {
+    "analysis": 3,
+    "video_id": "54wglXdD_Ww",
+    "title": "\"내가 한 게 없다고..?\" 무너진 정글의 교권에 오열하는 가짜 정글러 이상호..!【중간계 시즌2 Ep.3】",
+    "view_count": 197821,
+    "like_count": 789,
+    "comment_count": 105,
+    "published_at": "2026-06-18"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 135,
+  "fields": {
+    "analysis": 3,
+    "video_id": "8_mI87B10P0",
+    "title": "\"3도구 + 3유찰팀\" 모두가 최약체라고 예상했던 팀인데 생각보다 강팀이다..?!【중간계 시즌2 Ep.2】",
+    "view_count": 187594,
+    "like_count": 871,
+    "comment_count": 88,
+    "published_at": "2026-06-17"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 136,
+  "fields": {
+    "analysis": 3,
+    "video_id": "uHT-vKBFpOg",
+    "title": "중간계 대망의 경매 시작! 과연 이상호는 이번에 어떤 감독에게 갈까?【중간계 시즌2 Ep.1】",
+    "view_count": 215519,
+    "like_count": 1162,
+    "comment_count": 104,
+    "published_at": "2026-06-16"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 137,
+  "fields": {
+    "analysis": 3,
+    "video_id": "n8isAsSSWa8",
+    "title": "\"이상호가 1옵션?!\" 드디어 시작된 중간계 전야제! 밸런스 측정하는데 밸붕급 폼을 보여주는 이상호..?【중간계 시즌2 Ep.0】",
+    "view_count": 243868,
+    "like_count": 1037,
+    "comment_count": 118,
+    "published_at": "2026-06-14"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 138,
+  "fields": {
+    "analysis": 3,
+    "video_id": "zT74vKM8mtU",
+    "title": "억대 현질한 제 맨유 팀이 영포티 같다고요?",
+    "view_count": 431865,
+    "like_count": 2649,
+    "comment_count": 174,
+    "published_at": "2026-06-13"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 139,
+  "fields": {
+    "analysis": 3,
+    "video_id": "9BFKJ8dckxk",
+    "title": "하도 리신 니달리 못한다길래 꺼냈다가 1렙부터 일어난 대참사..!",
+    "view_count": 284737,
+    "like_count": 1270,
+    "comment_count": 167,
+    "published_at": "2026-06-12"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 140,
+  "fields": {
+    "analysis": 3,
+    "video_id": "f5BgQinbGq4",
+    "title": "\"승률 90%\" 골드까지 단 한 걸음! 리신 니달리 자체 밴하니까 양학하고 다니는 이상호!",
+    "view_count": 316963,
+    "like_count": 1380,
+    "comment_count": 160,
+    "published_at": "2026-06-10"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 141,
+  "fields": {
+    "analysis": 4,
+    "video_id": "ijMvC8QGNvw",
+    "title": "🔥르세라핌vs강나미, '디진다 돈까스' 대결!🥊",
+    "view_count": 1203323,
+    "like_count": 25597,
+    "comment_count": 1820,
+    "published_at": "2026-06-18"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 142,
+  "fields": {
+    "analysis": 4,
+    "video_id": "NYCmvv_A4mQ",
+    "title": "제주도 당일치기(?)로 4끼 때려 부수고 왔습니다 ✈️🍽️",
+    "view_count": 672573,
+    "like_count": 5349,
+    "comment_count": 331,
+    "published_at": "2026-06-11"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 143,
+  "fields": {
+    "analysis": 4,
+    "video_id": "14WRJKl3fQE",
+    "title": "신혼집들이만 하려다가 일본까지 가버렸습니다…(ft.지하철 친구)",
+    "view_count": 1740984,
+    "like_count": 24378,
+    "comment_count": 1331,
+    "published_at": "2026-06-09"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 144,
+  "fields": {
+    "analysis": 4,
+    "video_id": "URJrux1lc-M",
+    "title": "결국 촬영 중단했습니다..🚨 수술실까지 들어가게 된 사연🏥💦",
+    "view_count": 1094769,
+    "like_count": 11757,
+    "comment_count": 794,
+    "published_at": "2026-06-04"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 145,
+  "fields": {
+    "analysis": 4,
+    "video_id": "XieEDmU3Q7U",
+    "title": "시부 야호-! 갸루 강나미와 하늘이의 3일 간의 도쿄 여행 ✨",
+    "view_count": 405409,
+    "like_count": 5734,
+    "comment_count": 656,
+    "published_at": "2026-06-02"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 146,
+  "fields": {
+    "analysis": 4,
+    "video_id": "CFTFqZm_Hlw",
+    "title": "이번엔 사기 아닙니다! 포켓몬 카드에 5000만 원 지른 강나미의 운명은?🔥",
+    "view_count": 899542,
+    "like_count": 9677,
+    "comment_count": 784,
+    "published_at": "2026-05-28"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 147,
+  "fields": {
+    "analysis": 4,
+    "video_id": "Ul_npvOuKpA",
+    "title": "그동안 일본 마트 리뷰를 사랑해주셔서 감사합니다. feat.35년 친구",
+    "view_count": 546914,
+    "like_count": 7408,
+    "comment_count": 335,
+    "published_at": "2026-05-21"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 148,
+  "fields": {
+    "analysis": 4,
+    "video_id": "fEJY3Lr3z2c",
+    "title": "촬영 중단하고 경찰서 간 썰. QWER 아키하바라 기강 잡으러 감👊🔥",
+    "view_count": 538421,
+    "like_count": 7953,
+    "comment_count": 675,
+    "published_at": "2026-05-14"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 149,
+  "fields": {
+    "analysis": 4,
+    "video_id": "cZ2ZoMT-g_I",
+    "title": "80만원 태운 역대급 먹방!💸 마트부터 돈키호테까지 싹쓸어 담은 일본 먹거리 '최종 보스' 대공개!",
+    "view_count": 478753,
+    "like_count": 5028,
+    "comment_count": 226,
+    "published_at": "2026-05-07"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 150,
+  "fields": {
+    "analysis": 4,
+    "video_id": "92vvi5FyxlY",
+    "title": "결국 엄마를 울렸습니다... 효도하려다 눈물바다 된 사연🥲✨",
+    "view_count": 391879,
+    "like_count": 6810,
+    "comment_count": 321,
+    "published_at": "2026-04-30"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 151,
+  "fields": {
+    "analysis": 5,
+    "video_id": "zcZxo7E9bF0",
+    "title": "감히 시험하려 들지 마라",
+    "view_count": 435525,
+    "like_count": 8131,
+    "comment_count": 435,
+    "published_at": "2026-06-17"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 152,
+  "fields": {
+    "analysis": 5,
+    "video_id": "K01pxM6mOUQ",
+    "title": "티모 잡는 날",
+    "view_count": 196954,
+    "like_count": 4388,
+    "comment_count": 180,
+    "published_at": "2026-06-10"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 153,
+  "fields": {
+    "analysis": 5,
+    "video_id": "vO8Zy5y5I0s",
+    "title": "전문집사 이상혁",
+    "view_count": 311671,
+    "like_count": 6103,
+    "comment_count": 194,
+    "published_at": "2026-06-03"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 154,
+  "fields": {
+    "analysis": 5,
+    "video_id": "D7FukLIjda8",
+    "title": "계란 한 판",
+    "view_count": 341236,
+    "like_count": 10796,
+    "comment_count": 346,
+    "published_at": "2026-05-27"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 155,
+  "fields": {
+    "analysis": 5,
+    "video_id": "i5Rw-bA84Xg",
+    "title": "넌 못 지나간다",
+    "view_count": 239354,
+    "like_count": 5503,
+    "comment_count": 146,
+    "published_at": "2026-05-11"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 156,
+  "fields": {
+    "analysis": 5,
+    "video_id": "VXEXCOUOOBM",
+    "title": "너 뭐 하는 애니?",
+    "view_count": 197788,
+    "like_count": 4633,
+    "comment_count": 154,
+    "published_at": "2026-04-24"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 157,
+  "fields": {
+    "analysis": 5,
+    "video_id": "IT0mlafrYEM",
+    "title": "매혹",
+    "view_count": 353148,
+    "like_count": 9296,
+    "comment_count": 414,
+    "published_at": "2026-04-12"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 158,
+  "fields": {
+    "analysis": 5,
+    "video_id": "Ia5dP5DTR-8",
+    "title": "수상할 정도로 카직스를 잘하는",
+    "view_count": 350446,
+    "like_count": 6558,
+    "comment_count": 224,
+    "published_at": "2026-04-05"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 159,
+  "fields": {
+    "analysis": 5,
+    "video_id": "adhfGPYJFtk",
+    "title": "증바람",
+    "view_count": 730812,
+    "like_count": 10554,
+    "comment_count": 396,
+    "published_at": "2026-03-28"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 160,
+  "fields": {
+    "analysis": 5,
+    "video_id": "k5UC25k6cK4",
+    "title": "5년 만에 페이커 손에 쥐어진 총검",
+    "view_count": 639492,
+    "like_count": 11685,
+    "comment_count": 256,
+    "published_at": "2026-03-13"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 161,
+  "fields": {
+    "analysis": 6,
+    "video_id": "9IJExIkHLp0",
+    "title": "마크에서 제일 무섭다는 백룸 모드 (feat.지류)",
+    "view_count": 82743,
+    "like_count": 3257,
+    "comment_count": 315,
+    "published_at": "2026-06-23"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 162,
+  "fields": {
+    "analysis": 6,
+    "video_id": "HJmMmI3tIdM",
+    "title": "종결 보디빌더 만났습니다 [씩씩한 보디빌딩 EP4]",
+    "view_count": 249953,
+    "like_count": 3504,
+    "comment_count": 408,
+    "published_at": "2026-06-22"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 163,
+  "fields": {
+    "analysis": 6,
+    "video_id": "SEFSqkSUjcQ",
+    "title": "마크 공포모드 지립니다 (feat. 지류)",
+    "view_count": 549313,
+    "like_count": 8940,
+    "comment_count": 740,
+    "published_at": "2026-06-19"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 164,
+  "fields": {
+    "analysis": 6,
+    "video_id": "Y6eE-90Um9s",
+    "title": "마크 유튜버 PVP 최강자전",
+    "view_count": 230480,
+    "like_count": 3273,
+    "comment_count": 587,
+    "published_at": "2026-06-16"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 165,
+  "fields": {
+    "analysis": 6,
+    "video_id": "kr3HDNFrs7g",
+    "title": "월급 받으며 말왕 괴롭히기 [슬기로운 편집 생활 EP2]",
+    "view_count": 210711,
+    "like_count": 4139,
+    "comment_count": 412,
+    "published_at": "2026-06-14"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 166,
+  "fields": {
+    "analysis": 6,
+    "video_id": "-Q-DM8yizkw",
+    "title": "종결 템 3명 VS 맨손 시청자 100명",
+    "view_count": 420478,
+    "like_count": 4879,
+    "comment_count": 608,
+    "published_at": "2026-06-12"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 167,
+  "fields": {
+    "analysis": 6,
+    "video_id": "Bb8FWc2KvqE",
+    "title": "돌아온 공포 게임의 계절 [더 미믹]",
+    "view_count": 503435,
+    "like_count": 7229,
+    "comment_count": 704,
+    "published_at": "2026-06-10"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 168,
+  "fields": {
+    "analysis": 6,
+    "video_id": "NwsurYZBg7w",
+    "title": "진지하게 드릴 말씀이 있습니다",
+    "view_count": 402000,
+    "like_count": 4913,
+    "comment_count": 633,
+    "published_at": "2026-06-08"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 169,
+  "fields": {
+    "analysis": 6,
+    "video_id": "wTCtD83rVVM",
+    "title": "마인크래프트 천하통일 프로젝트",
+    "view_count": 431487,
+    "like_count": 8225,
+    "comment_count": 1732,
+    "published_at": "2026-06-06"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 170,
+  "fields": {
+    "analysis": 6,
+    "video_id": "FwufELvNm4c",
+    "title": "식단+운동 3주 병행한 결과 [씩씩한 보디빌딩 EP3]",
+    "view_count": 176037,
+    "like_count": 1976,
+    "comment_count": 271,
+    "published_at": "2026-06-05"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 171,
+  "fields": {
+    "analysis": 7,
+    "video_id": "sHxQmRuZzMI",
+    "title": "전 UFC 챔피언을 한국으로 초대한 김동현 l EP.1 우들리 한국 전지훈련",
+    "view_count": 204153,
+    "like_count": 4175,
+    "comment_count": 708,
+    "published_at": "2026-06-21"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 172,
+  "fields": {
+    "analysis": 7,
+    "video_id": "M2TVx8vSMLg",
+    "title": "모든 경기 KO?! 백악관 UFC를 본 김동현 반응",
+    "view_count": 515955,
+    "like_count": 6409,
+    "comment_count": 1181,
+    "published_at": "2026-06-16"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 173,
+  "fields": {
+    "analysis": 7,
+    "video_id": "57__KFSEwBk",
+    "title": "고석현 선수 경기가 잡혔습니다 (※경기 발표※)",
+    "view_count": 446622,
+    "like_count": 6300,
+    "comment_count": 941,
+    "published_at": "2026-06-14"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 174,
+  "fields": {
+    "analysis": 7,
+    "video_id": "0UK0j9Zb03M",
+    "title": "생각지도 못했던 서브미션을 본 김동현의 반응",
+    "view_count": 331411,
+    "like_count": 5107,
+    "comment_count": 967,
+    "published_at": "2026-06-12"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 175,
+  "fields": {
+    "analysis": 7,
+    "video_id": "8B9k9MzNx9I",
+    "title": "홍콩 하이록스에서 1등한 대한민국 아저씨들",
+    "view_count": 176096,
+    "like_count": 2443,
+    "comment_count": 541,
+    "published_at": "2026-06-09"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 176,
+  "fields": {
+    "analysis": 7,
+    "video_id": "07KXA9fLRJU",
+    "title": "박준용에게 앵클락 당하는 고석현ㅣFinal EP. 한국 전지훈련 끝",
+    "view_count": 346325,
+    "like_count": 6249,
+    "comment_count": 981,
+    "published_at": "2026-06-07"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 177,
+  "fields": {
+    "analysis": 7,
+    "video_id": "QmsToJVKy5g",
+    "title": "블랙컴뱃에 전지훈련 온 UFC 선수들ㅣEP.2 블랙컴뱃 전지훈련",
+    "view_count": 285685,
+    "like_count": 4399,
+    "comment_count": 1196,
+    "published_at": "2026-06-03"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 178,
+  "fields": {
+    "analysis": 7,
+    "video_id": "JmguJjmzpYE",
+    "title": "블랙컴뱃짐으로 전지훈련 간 고석현과 오반 l EP.1 오반 한국 전지훈련",
+    "view_count": 361987,
+    "like_count": 5803,
+    "comment_count": 1382,
+    "published_at": "2026-05-30"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 179,
+  "fields": {
+    "analysis": 7,
+    "video_id": "MmqtvDMb1qw",
+    "title": "본투윈과 마지막 이야기 l Final EP. 본투윈 전지훈련",
+    "view_count": 349308,
+    "like_count": 5206,
+    "comment_count": 1235,
+    "published_at": "2026-05-26"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 180,
+  "fields": {
+    "analysis": 7,
+    "video_id": "RyPFuSrntwg",
+    "title": "패디한테 태클 들어가는 고석현ㅣ EP.8 리버풀 전지훈련",
+    "view_count": 449488,
+    "like_count": 6063,
+    "comment_count": 1719,
+    "published_at": "2026-05-23"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 181,
+  "fields": {
+    "analysis": 8,
+    "video_id": "3B-Qw4zrbII",
+    "title": "홍명보호가 안타까운 이유",
+    "view_count": 334885,
+    "like_count": 6244,
+    "comment_count": 3642,
+    "published_at": "2026-06-19"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 182,
+  "fields": {
+    "analysis": 8,
+    "video_id": "JtBopQE5Krs",
+    "title": "메시가 여전히 세계 최고인 이유",
+    "view_count": 337211,
+    "like_count": 5109,
+    "comment_count": 816,
+    "published_at": "2026-06-18"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 183,
+  "fields": {
+    "analysis": 8,
+    "video_id": "DHVTWske-18",
+    "title": "손흥민은 정말 후보여야 할까?",
+    "view_count": 366685,
+    "like_count": 6981,
+    "comment_count": 3828,
+    "published_at": "2026-06-14"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 184,
+  "fields": {
+    "analysis": 8,
+    "video_id": "Ce93hCAcKMo",
+    "title": "극적인 역전승이 가능했던 이유",
+    "view_count": 481175,
+    "like_count": 8027,
+    "comment_count": 1825,
+    "published_at": "2026-06-12"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 185,
+  "fields": {
+    "analysis": 8,
+    "video_id": "dpqe3BCV2eg",
+    "title": "피파 랭킹 1위가 월드컵 우승을 못하는 이유",
+    "view_count": 238957,
+    "like_count": 2892,
+    "comment_count": 526,
+    "published_at": "2026-06-11"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 186,
+  "fields": {
+    "analysis": 8,
+    "video_id": "CjAKoWvihjs",
+    "title": "음바페가 월드컵만 가면 날아다니는 이유",
+    "view_count": 221230,
+    "like_count": 2553,
+    "comment_count": 368,
+    "published_at": "2026-06-09"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 187,
+  "fields": {
+    "analysis": 8,
+    "video_id": "GHhZjIv_cck",
+    "title": "일본인이 예상하는 한국의 월드컵 성적",
+    "view_count": 41596,
+    "like_count": 665,
+    "comment_count": 96,
+    "published_at": "2026-06-08"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 188,
+  "fields": {
+    "analysis": 8,
+    "video_id": "AVGeUOGK3qM",
+    "title": "왜 빅클럽은 되는데 한국은 안될까?",
+    "view_count": 240542,
+    "like_count": 3434,
+    "comment_count": 747,
+    "published_at": "2026-05-28"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 189,
+  "fields": {
+    "analysis": 8,
+    "video_id": "2nizyQEdMhs",
+    "title": "현재 난리난 PSG의 '골킥 전술'이 거짓인 이유",
+    "view_count": 179845,
+    "like_count": 2670,
+    "comment_count": 417,
+    "published_at": "2026-05-16"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 190,
+  "fields": {
+    "analysis": 8,
+    "video_id": "uhupbLndhvk",
+    "title": "레알이 망해가는 이유",
+    "view_count": 519165,
+    "like_count": 6986,
+    "comment_count": 1037,
+    "published_at": "2026-05-11"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 191,
+  "fields": {
+    "analysis": 9,
+    "video_id": "FvhFRIb-HJU",
+    "title": "사장님이 미쳤어요",
+    "view_count": 1046901,
+    "like_count": 14662,
+    "comment_count": 1158,
+    "published_at": "2026-06-18"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 192,
+  "fields": {
+    "analysis": 9,
+    "video_id": "iDZFaWwO_Aw",
+    "title": "하이닉스를 사라고요? 왜요?",
+    "view_count": 756747,
+    "like_count": 9443,
+    "comment_count": 918,
+    "published_at": "2026-06-13"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 193,
+  "fields": {
+    "analysis": 9,
+    "video_id": "3GUSGbtVNqo",
+    "title": "직장인의 이중생활",
+    "view_count": 2163974,
+    "like_count": 31366,
+    "comment_count": 2105,
+    "published_at": "2026-04-29"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 194,
+  "fields": {
+    "analysis": 9,
+    "video_id": "JxSyrsBLVtg",
+    "title": "계산하면서 때려야 됨",
+    "view_count": 900721,
+    "like_count": 12111,
+    "comment_count": 1188,
+    "published_at": "2026-04-09"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 195,
+  "fields": {
+    "analysis": 9,
+    "video_id": "gCv1J_ZncPo",
+    "title": "[4K ASMR] 10분 내 무의식 이완 유도, 뇌가 편안해지는 리얼 장작 소리 (백색소음/공부/딥슬립)",
+    "view_count": 396213,
+    "like_count": 5755,
+    "comment_count": 470,
+    "published_at": "2026-03-26"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 196,
+  "fields": {
+    "analysis": 9,
+    "video_id": "UySfWbE2xi4",
+    "title": "커피 시켰는데 문제 있나요?",
+    "view_count": 1016114,
+    "like_count": 12722,
+    "comment_count": 756,
+    "published_at": "2026-03-11"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 197,
+  "fields": {
+    "analysis": 9,
+    "video_id": "0Zf6nJfHWC4",
+    "title": "우리 딸이랑 결혼을 한다고?",
+    "view_count": 2061186,
+    "like_count": 23883,
+    "comment_count": 1067,
+    "published_at": "2026-03-04"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 198,
+  "fields": {
+    "analysis": 9,
+    "video_id": "7lzsJYNWkHQ",
+    "title": "취업이 안 되는데요?",
+    "view_count": 1169687,
+    "like_count": 15110,
+    "comment_count": 1848,
+    "published_at": "2026-02-17"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 199,
+  "fields": {
+    "analysis": 9,
+    "video_id": "IJlB_wRSu18",
+    "title": "너무 제 이상형이셔서",
+    "view_count": 779232,
+    "like_count": 9752,
+    "comment_count": 497,
+    "published_at": "2026-02-13"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 200,
+  "fields": {
+    "analysis": 9,
+    "video_id": "yNRx62XxF-g",
+    "title": "인사 안 해요?",
+    "view_count": 994196,
+    "like_count": 12606,
+    "comment_count": 1591,
+    "published_at": "2026-02-06"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 201,
+  "fields": {
+    "analysis": 10,
+    "video_id": "B1TXNN5HJdg",
+    "title": "최유정과 함께",
+    "view_count": 90260,
+    "like_count": 4503,
+    "comment_count": 493,
+    "published_at": "2026-06-23"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 202,
+  "fields": {
+    "analysis": 10,
+    "video_id": "d66PqZaMnLs",
+    "title": "자영업자의 하루",
+    "view_count": 968503,
+    "like_count": 24865,
+    "comment_count": 2472,
+    "published_at": "2026-06-18"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 203,
+  "fields": {
+    "analysis": 10,
+    "video_id": "KQNcXLLd8X8",
+    "title": "퇴사한 직원들 리즈시절 되찾아주기",
+    "view_count": 842223,
+    "like_count": 15803,
+    "comment_count": 1004,
+    "published_at": "2026-06-08"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 204,
+  "fields": {
+    "analysis": 10,
+    "video_id": "PawXOUp16JI",
+    "title": "부크루장 권화운과 함께",
+    "view_count": 614948,
+    "like_count": 10940,
+    "comment_count": 593,
+    "published_at": "2026-05-31"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 205,
+  "fields": {
+    "analysis": 10,
+    "video_id": "C1bKk1D9U3s",
+    "title": "해군 병장 기안84의 하루",
+    "view_count": 1019950,
+    "like_count": 17871,
+    "comment_count": 2202,
+    "published_at": "2026-05-27"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 206,
+  "fields": {
+    "analysis": 10,
+    "video_id": "RdNjQeTUMGE",
+    "title": "드디어 돌아온 강미나",
+    "view_count": 1644504,
+    "like_count": 31289,
+    "comment_count": 5517,
+    "published_at": "2026-05-14"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 207,
+  "fields": {
+    "analysis": 10,
+    "video_id": "7WgoRraWh1k",
+    "title": "솔로지옥84",
+    "view_count": 728895,
+    "like_count": 12106,
+    "comment_count": 1531,
+    "published_at": "2026-05-06"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 208,
+  "fields": {
+    "analysis": 10,
+    "video_id": "yaExKpBI9_Q",
+    "title": "기안84 일본어 과외 선생님과 함께",
+    "view_count": 1384045,
+    "like_count": 22218,
+    "comment_count": 1405,
+    "published_at": "2026-04-24"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 209,
+  "fields": {
+    "analysis": 10,
+    "video_id": "e9wzppk8zIk",
+    "title": "형수님과 태교 여행",
+    "view_count": 1429737,
+    "like_count": 23519,
+    "comment_count": 1169,
+    "published_at": "2026-04-18"
+  }
+},
+{
+  "model": "marketing.youtuberecentvideo",
+  "pk": 210,
+  "fields": {
+    "analysis": 10,
+    "video_id": "lNPtBF7vXrs",
+    "title": "김민지와 함께",
+    "view_count": 928131,
+    "like_count": 15464,
+    "comment_count": 1091,
+    "published_at": "2026-04-06"
+  }
+}
+]
