@@ -7,7 +7,10 @@ __pycache__/
 .venv/
 venv/
 env/
-ajeongdang/
+*/pyvenv.cfg
+*/Scripts/
+*/Lib/
+*/Include/
 
 # Django / local runtime
 db.sqlite3

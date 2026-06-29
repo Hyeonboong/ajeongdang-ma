@@ -110,7 +110,7 @@ class TrackingLinkForm(forms.ModelForm):
         }
         widgets = {
             "name": forms.TextInput(attrs={"placeholder": "예: 김진짜 영상 고정댓글 링크"}),
-            "destination_url": forms.URLInput(attrs={"placeholder": "예: https://www.ajeongdang.com/landing 또는 기존 UTM 링크"}),
+            "destination_url": forms.URLInput(attrs={"placeholder": "예: https://www.example.com/landing 또는 기존 UTM 링크"}),
         }
 
     def __init__(self, *args, **kwargs):

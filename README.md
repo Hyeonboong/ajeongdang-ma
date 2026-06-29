@@ -1,8 +1,8 @@
 # 마케팅 자동화 프로젝트
 
-아정당 지원용 Django 포트폴리오 프로젝트입니다.
+생활서비스 기반 유튜브 협찬 마케팅 자동화 포트폴리오 프로젝트입니다.
 
-아정당처럼 인터넷, TV, 렌탈, 휴대폰, 이사 등 생활서비스를 상담 기반으로 연결하는 회사에서 유튜브 협찬 캠페인이 실제 상담 신청과 가입으로 이어졌는지 확인하기 위한 내부 마케팅 분석 대시보드입니다.
+인터넷, TV, 렌탈, 휴대폰, 이사 등 생활서비스를 상담 기반으로 연결하는 회사에서 유튜브 협찬 캠페인이 실제 상담 신청과 가입으로 이어졌는지 확인하기 위한 내부 마케팅 분석 대시보드입니다.
 
 ## 프로젝트 목적
 
@@ -294,19 +294,19 @@
 ### 1. 가상환경 생성
 
 ```bash
-python -m venv ajeongdang
+python -m venv .venv
 ```
 
 Windows PowerShell:
 
 ```powershell
-.\ajeongdang\Scripts\Activate.ps1
+.\.venv\Scripts\Activate.ps1
 ```
 
 Windows CMD:
 
 ```cmd
-ajeongdang\Scripts\activate
+.venv\Scripts\activate
 ```
 
 ### 2. 패키지 설치
